@@ -1,5 +1,5 @@
 Assembler report for any_wave
-Sun Apr 27 03:07:55 2025
+Sun Apr 27 05:32:13 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -9,9 +9,10 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: D:/FPGAProject/any_wave/output_files/any_wave.sof
-  6. Assembler Messages
+  4. Assembler Encrypted IP Cores Summary
+  5. Assembler Generated Files
+  6. Assembler Device Options: D:/FPGAProject/any_wave/output_files/any_wave.sof
+  7. Assembler Messages
 
 
 
@@ -37,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Apr 27 03:07:55 2025 ;
+; Assembler Status      ; Successful - Sun Apr 27 05:32:13 2025 ;
 ; Revision Name         ; any_wave                              ;
 ; Top-level Entity Name ; any_wave                              ;
 ; Family                ; Cyclone IV E                          ;
@@ -50,6 +51,16 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 ; Option ; Setting ; Default Value ;
 +--------+---------+---------------+
+
+
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
 
 
 +---------------------------------------------------+
@@ -66,8 +77,8 @@ refer to the applicable agreement for further details.
 +----------------+------------------------------------------------------------+
 ; Option         ; Setting                                                    ;
 +----------------+------------------------------------------------------------+
-; JTAG usercode  ; 0x00086EE2                                                 ;
-; Checksum       ; 0x00086EE2                                                 ;
+; JTAG usercode  ; 0x000E643F                                                 ;
+; Checksum       ; 0x000E643F                                                 ;
 +----------------+------------------------------------------------------------+
 
 
@@ -77,15 +88,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 03:07:54 2025
+    Info: Processing started: Sun Apr 27 05:32:11 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off any_wave -c any_wave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4684 megabytes
-    Info: Processing ended: Sun Apr 27 03:07:55 2025
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4690 megabytes
+    Info: Processing ended: Sun Apr 27 05:32:13 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

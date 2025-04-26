@@ -1,5 +1,5 @@
 Analysis & Synthesis report for any_wave
-Sun Apr 27 03:07:50 2025
+Sun Apr 27 05:32:06 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -16,32 +16,36 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
  13. Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated
  14. Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated
  15. Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated
  16. Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated
- 17. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m1
- 18. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m2
- 19. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m3
- 20. Parameter Settings for User Entity Instance: sin:Rom_sin|altsyncram:altsyncram_component
- 21. Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component
- 22. Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component
- 23. Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component
- 24. altsyncram Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "triangular:Rom_triangular"
- 26. Port Connectivity Checks: "sawtooth:Rom_sawtooth"
- 27. Port Connectivity Checks: "square:Rom_square"
- 28. Port Connectivity Checks: "ax_debounce:ax_debounce_m3"
- 29. Port Connectivity Checks: "count:count_m3"
- 30. Port Connectivity Checks: "ax_debounce:ax_debounce_m2"
- 31. Port Connectivity Checks: "count:count_m2"
- 32. Port Connectivity Checks: "ax_debounce:ax_debounce_m1"
- 33. Port Connectivity Checks: "count:count_m1"
- 34. Post-Synthesis Netlist Statistics for Top Partition
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+ 17. Source assignments for sld_signaltap:auto_signaltap_0
+ 18. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m1
+ 19. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m2
+ 20. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m3
+ 21. Parameter Settings for User Entity Instance: sin:Rom_sin|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component
+ 23. Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component
+ 24. Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component
+ 25. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "sawtooth:Rom_sawtooth"
+ 28. Port Connectivity Checks: "square:Rom_square"
+ 29. Port Connectivity Checks: "sin:Rom_sin"
+ 30. Port Connectivity Checks: "ax_debounce:ax_debounce_m3"
+ 31. Port Connectivity Checks: "count:count_m3"
+ 32. Port Connectivity Checks: "ax_debounce:ax_debounce_m2"
+ 33. Port Connectivity Checks: "count:count_m2"
+ 34. Port Connectivity Checks: "ax_debounce:ax_debounce_m1"
+ 35. Port Connectivity Checks: "count:count_m1"
+ 36. Signal Tap Logic Analyzer Settings
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 40. Analysis & Synthesis Messages
 
 
 
@@ -67,18 +71,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 27 03:07:50 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 27 05:32:06 2025       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; any_wave                                    ;
 ; Top-level Entity Name              ; any_wave                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1                                           ;
-;     Total combinational functions  ; 1                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 12                                          ;
+; Total logic elements               ; 717                                         ;
+;     Total combinational functions  ; 492                                         ;
+;     Dedicated logic registers      ; 525                                         ;
+; Total registers                    ; 525                                         ;
+; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 16                                          ;
+; Total memory bits                  ; 10,240                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -179,164 +183,225 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; ip_config/sin.v                  ; yes             ; User Wizard-Generated File             ; D:/FPGAProject/any_wave/ip_config/sin.v                                      ;         ;
-; ip_config/square.v               ; yes             ; User Wizard-Generated File             ; D:/FPGAProject/any_wave/ip_config/square.v                                   ;         ;
-; ip_config/triangular.v           ; yes             ; User Wizard-Generated File             ; D:/FPGAProject/any_wave/ip_config/triangular.v                               ;         ;
-; ip_config/sawtooth.v             ; yes             ; User Wizard-Generated File             ; D:/FPGAProject/any_wave/ip_config/sawtooth.v                                 ;         ;
-; srv/any_wave.v                   ; yes             ; User Verilog HDL File                  ; D:/FPGAProject/any_wave/srv/any_wave.v                                       ;         ;
-; srv/count.v                      ; yes             ; User Verilog HDL File                  ; D:/FPGAProject/any_wave/srv/count.v                                          ;         ;
-; srv/ax_debounce.v                ; yes             ; User Verilog HDL File                  ; D:/FPGAProject/any_wave/srv/ax_debounce.v                                    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal171.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_dha1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf                               ;         ;
-; mif/sin_wave.mif                 ; yes             ; Auto-Found Memory Initialization File  ; D:/FPGAProject/any_wave/mif/sin_wave.mif                                     ;         ;
-; db/altsyncram_kra1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf                               ;         ;
-; mif/square_wave.mif              ; yes             ; Auto-Found Memory Initialization File  ; D:/FPGAProject/any_wave/mif/square_wave.mif                                  ;         ;
-; db/altsyncram_s2b1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf                               ;         ;
-; mif/sawtooth_wave.mif            ; yes             ; Auto-Found Memory Initialization File  ; D:/FPGAProject/any_wave/mif/sawtooth_wave.mif                                ;         ;
-; db/altsyncram_s8b1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf                               ;         ;
-; mif/triangular_wave.mif          ; yes             ; Auto-Found Memory Initialization File  ; D:/FPGAProject/any_wave/mif/triangular_wave.mif                              ;         ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                         ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                               ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------+-------------+
+; ip_config/sin.v                                                    ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/sin.v                                                    ;             ;
+; ip_config/square.v                                                 ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/square.v                                                 ;             ;
+; ip_config/triangular.v                                             ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/triangular.v                                             ;             ;
+; ip_config/sawtooth.v                                               ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/sawtooth.v                                               ;             ;
+; srv/any_wave.v                                                     ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/any_wave.v                                                     ;             ;
+; srv/count.v                                                        ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/count.v                                                        ;             ;
+; srv/ax_debounce.v                                                  ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/ax_debounce.v                                                  ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;             ;
+; aglobal171.inc                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                      ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                          ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                          ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                        ;             ;
+; db/altsyncram_dha1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf                                             ;             ;
+; ./mif/sin_wave.mif                                                 ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/sin_wave.mif                                                   ;             ;
+; db/altsyncram_kra1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf                                             ;             ;
+; ./mif/square_wave.mif                                              ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/square_wave.mif                                                ;             ;
+; db/altsyncram_s2b1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf                                             ;             ;
+; ./mif/sawtooth_wave.mif                                            ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/sawtooth_wave.mif                                              ;             ;
+; db/altsyncram_s8b1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf                                             ;             ;
+; ./mif/triangular_wave.mif                                          ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/triangular_wave.mif                                            ;             ;
+; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap.vhd                   ;             ;
+; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd              ;             ;
+; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_control.vhd                 ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                    ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_constant.inc                    ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/dffeea.inc                          ;             ;
+; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_mbpmg.vhd                       ;             ;
+; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd        ;             ;
+; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd              ;             ;
+; db/altsyncram_i724.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_i724.tdf                                             ;             ;
+; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.tdf                        ;             ;
+; memmodes.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/others/maxplus2/memmodes.inc                      ;             ;
+; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_hdffe.inc                         ;             ;
+; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                 ;             ;
+; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.inc                      ;             ;
+; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.tdf                         ;             ;
+; muxlut.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/muxlut.inc                          ;             ;
+; bypassff.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc                        ;             ;
+; altshift.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc                        ;             ;
+; db/mux_psc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/mux_psc.tdf                                                     ;             ;
+; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.tdf                      ;             ;
+; declut.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/declut.inc                          ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_compare.inc                     ;             ;
+; db/decode_dvf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/decode_dvf.tdf                                                  ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_counter.tdf                     ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc                     ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cmpconst.inc                        ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_counter.inc                     ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_counter_stratix.inc             ;             ;
+; db/cntr_vei.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/cntr_vei.tdf                                                    ;             ;
+; db/cntr_89j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/cntr_89j.tdf                                                    ;             ;
+; db/cntr_cgi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/cntr_cgi.tdf                                                    ;             ;
+; db/cmpr_rgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/cmpr_rgc.tdf                                                    ;             ;
+; db/cntr_23j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/cntr_23j.tdf                                                    ;             ;
+; db/cmpr_ngc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/cmpr_ngc.tdf                                                    ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                      ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd       ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv   ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_hub.vhd                         ; altera_sld  ;
+; db/ip/sld9fdc316e/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                    ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------+-------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1     ;
-;                                             ;       ;
-; Total combinational functions               ; 1     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 1     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 12    ;
-; Total memory bits                           ; 16    ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; ~GND  ;
-; Maximum fan-out                             ; 8     ;
-; Total fan-out                               ; 36    ;
-; Average fan-out                             ; 1.09  ;
-+---------------------------------------------+-------+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 717                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 492                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 191                      ;
+;     -- 3 input functions                    ; 149                      ;
+;     -- <=2 input functions                  ; 152                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 402                      ;
+;     -- arithmetic mode                      ; 90                       ;
+;                                             ;                          ;
+; Total registers                             ; 525                      ;
+;     -- Dedicated logic registers            ; 525                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 13                       ;
+; Total memory bits                           ; 10240                    ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 350                      ;
+; Total fan-out                               ; 3538                     ;
+; Average fan-out                             ; 3.31                     ;
++---------------------------------------------+--------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
-; |any_wave                                 ; 1 (1)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 12   ; 0            ; |any_wave                                                                            ; any_wave        ; work         ;
-;    |sin:Rom_sin|                          ; 0 (0)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin                                                                ; sin             ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_dha1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated ; altsyncram_dha1 ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |any_wave                                                                                                                               ; 492 (8)             ; 525 (9)                   ; 10240       ; 0            ; 0       ; 0         ; 13   ; 0            ; |any_wave                                                                                                                                                                                                                                                                                                                                            ; any_wave                          ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 127 (1)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 126 (1)             ; 91 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 125 (0)             ; 86 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 125 (86)            ; 86 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 21 (21)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
+;    |sld_signaltap:auto_signaltap_0|                                                                                                     ; 356 (2)             ; 424 (16)                  ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                             ; sld_signaltap                     ; work         ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                                                           ; 354 (0)             ; 408 (0)                   ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                       ; sld_signaltap_impl                ; work         ;
+;          |sld_signaltap_implb:sld_signaltap_body|                                                                                       ; 354 (88)            ; 408 (112)                 ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                                ; sld_signaltap_implb               ; work         ;
+;             |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                                                            ; 23 (0)              ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                                 ; altdpram                          ; work         ;
+;                |lpm_decode:wdecoder|                                                                                                    ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                             ; lpm_decode                        ; work         ;
+;                   |decode_dvf:auto_generated|                                                                                           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_dvf:auto_generated                                                                                                                   ; decode_dvf                        ; work         ;
+;                |lpm_mux:mux|                                                                                                            ; 21 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux                                                                                                                                                     ; lpm_mux                           ; work         ;
+;                   |mux_psc:auto_generated|                                                                                              ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux|mux_psc:auto_generated                                                                                                                              ; mux_psc                           ; work         ;
+;             |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                                                           ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                                ; altsyncram                        ; work         ;
+;                |altsyncram_i724:auto_generated|                                                                                         ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_i724:auto_generated                                                                                                                                                 ; altsyncram_i724                   ; work         ;
+;             |lpm_shiftreg:segment_offset_config_deserialize|                                                                            ; 0 (0)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                                 ; lpm_shiftreg                      ; work         ;
+;             |lpm_shiftreg:status_register|                                                                                              ; 17 (17)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                                   ; lpm_shiftreg                      ; work         ;
+;             |serial_crc_16:\tdo_crc_gen:tdo_crc_calc|                                                                                   ; 14 (14)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc                                                                                                                                                                                        ; serial_crc_16                     ; work         ;
+;             |sld_buffer_manager:sld_buffer_manager_inst|                                                                                ; 80 (80)             ; 59 (59)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                                     ; sld_buffer_manager                ; work         ;
+;             |sld_ela_control:ela_control|                                                                                               ; 20 (1)              ; 56 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                                    ; sld_ela_control                   ; work         ;
+;                |lpm_shiftreg:trigger_config_deserialize|                                                                                ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                            ; lpm_shiftreg                      ; work         ;
+;                |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|                                 ; 16 (0)              ; 40 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                             ; sld_ela_basic_multi_level_trigger ; work         ;
+;                   |lpm_shiftreg:trigger_condition_deserialize|                                                                          ; 0 (0)               ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                                  ; lpm_shiftreg                      ; work         ;
+;                   |sld_mbpmg:\trigger_modules_gen:0:trigger_match|                                                                      ; 16 (0)              ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match                                                              ; sld_mbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:1:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:2:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:3:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:4:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:5:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1        ; sld_sbpmg                         ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1|                                                            ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1        ; sld_sbpmg                         ; work         ;
+;                |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                                                          ; 3 (3)               ; 11 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                                      ; sld_ela_trigger_flow_mgr          ; work         ;
+;                   |lpm_shiftreg:trigger_config_deserialize|                                                                             ; 0 (0)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                              ; lpm_shiftreg                      ; work         ;
+;             |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|                                          ; 82 (9)              ; 69 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                               ; sld_offload_buffer_mgr            ; work         ;
+;                |lpm_counter:\adv_point_3_and_more:advance_pointer_counter|                                                              ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter                                                                                     ; lpm_counter                       ; work         ;
+;                   |cntr_vei:auto_generated|                                                                                             ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_vei:auto_generated                                                             ; cntr_vei                          ; work         ;
+;                |lpm_counter:read_pointer_counter|                                                                                       ; 10 (0)              ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                              ; lpm_counter                       ; work         ;
+;                   |cntr_89j:auto_generated|                                                                                             ; 10 (10)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_89j:auto_generated                                                                                      ; cntr_89j                          ; work         ;
+;                |lpm_counter:status_advance_pointer_counter|                                                                             ; 7 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                                    ; lpm_counter                       ; work         ;
+;                   |cntr_cgi:auto_generated|                                                                                             ; 7 (7)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_cgi:auto_generated                                                                            ; cntr_cgi                          ; work         ;
+;                |lpm_counter:status_read_pointer_counter|                                                                                ; 3 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                       ; lpm_counter                       ; work         ;
+;                   |cntr_23j:auto_generated|                                                                                             ; 3 (3)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_23j:auto_generated                                                                               ; cntr_23j                          ; work         ;
+;                |lpm_shiftreg:info_data_shift_out|                                                                                       ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                              ; lpm_shiftreg                      ; work         ;
+;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                               ; lpm_shiftreg                      ; work         ;
+;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                            ; lpm_shiftreg                      ; work         ;
+;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 30 (30)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                          ; sld_rom_sr                        ; work         ;
+;    |triangular:Rom_triangular|                                                                                                          ; 1 (0)               ; 1 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular                                                                                                                                                                                                                                                                                                                  ; triangular                        ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 1 (0)               ; 1 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                  ; altsyncram                        ; work         ;
+;          |altsyncram_s8b1:auto_generated|                                                                                               ; 1 (1)               ; 1 (1)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated                                                                                                                                                                                                                                                   ; altsyncram_s8b1                   ; work         ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
-+---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------+
-; Name                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                ;
-+---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------+
-; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; ./mif/sin_wave.mif ;
-+---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                       ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_i724:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None                      ;
+; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|ALTSYNCRAM                                                                                                   ; AUTO ; ROM              ; 256          ; 8            ; --           ; --           ; 2048 ; ./mif/triangular_wave.mif ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                        ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------+------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                     ; IP Include File        ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------+------------------------+
-; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|sawtooth:Rom_sawtooth     ; ip_config/sawtooth.v   ;
-; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|sin:Rom_sin               ; ip_config/sin.v        ;
-; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|square:Rom_square         ; ip_config/square.v     ;
-; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|triangular:Rom_triangular ; ip_config/triangular.v ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------+------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                  ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                               ; IP Include File        ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|sawtooth:Rom_sawtooth                                                                                                                                                                                                                                               ; ip_config/sawtooth.v   ;
+; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|sin:Rom_sin                                                                                                                                                                                                                                                         ; ip_config/sin.v        ;
+; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|square:Rom_square                                                                                                                                                                                                                                                   ; ip_config/square.v     ;
+; Altera ; ROM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |any_wave|triangular:Rom_triangular                                                                                                                                                                                                                                           ; ip_config/triangular.v ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                        ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                        ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                        ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                        ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                        ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                             ;
-+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                         ; Reason for Removal                     ;
-+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-; rden                                                                                                  ; Stuck at VCC due to stuck port data_in ;
-; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|rden_a_store ; Lost fanout                            ;
-; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store     ; Lost fanout                            ;
-; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store         ; Lost fanout                            ;
-; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store               ; Lost fanout                            ;
-; count:count_m2|data[0..3]                                                                             ; Stuck at GND due to stuck port clear   ;
-; ax_debounce:ax_debounce_m2|button_negedge                                                             ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m2|button_out_d0                                                              ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m2|button_out                                                                 ; Lost fanout                            ;
-; count:count_m1|data[0..3]                                                                             ; Stuck at GND due to stuck port clear   ;
-; ax_debounce:ax_debounce_m1|button_negedge                                                             ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m1|button_out_d0                                                              ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m1|button_out                                                                 ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m2|DFF1                                                                       ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m2|DFF2                                                                       ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m2|q_reg[0..31]                                                               ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m1|DFF1                                                                       ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m1|DFF2                                                                       ; Lost fanout                            ;
-; ax_debounce:ax_debounce_m1|q_reg[0..31]                                                               ; Lost fanout                            ;
-; Total Number of Removed Registers = 87                                                                ;                                        ;
-+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
-+------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-; Register name          ; Reason for Removal        ; Registers Removed due to This Register                                                                 ;
-+------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-; count:count_m2|data[3] ; Stuck at GND              ; ax_debounce:ax_debounce_m2|button_negedge,                                                             ;
-;                        ; due to stuck port clear   ; ax_debounce:ax_debounce_m2|button_out_d0, ax_debounce:ax_debounce_m2|button_out,                       ;
-;                        ;                           ; ax_debounce:ax_debounce_m2|DFF2, ax_debounce:ax_debounce_m2|q_reg[31],                                 ;
-;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[30], ax_debounce:ax_debounce_m2|q_reg[19],                            ;
-;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[18], ax_debounce:ax_debounce_m2|q_reg[17],                            ;
-;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[16], ax_debounce:ax_debounce_m2|q_reg[14],                            ;
-;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[9], ax_debounce:ax_debounce_m2|q_reg[6]                               ;
-; count:count_m1|data[3] ; Stuck at GND              ; ax_debounce:ax_debounce_m1|button_negedge,                                                             ;
-;                        ; due to stuck port clear   ; ax_debounce:ax_debounce_m1|button_out_d0, ax_debounce:ax_debounce_m1|button_out,                       ;
-;                        ;                           ; ax_debounce:ax_debounce_m1|DFF2, ax_debounce:ax_debounce_m1|q_reg[31],                                 ;
-;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[30], ax_debounce:ax_debounce_m1|q_reg[19],                            ;
-;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[18], ax_debounce:ax_debounce_m1|q_reg[17],                            ;
-;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[16], ax_debounce:ax_debounce_m1|q_reg[14],                            ;
-;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[9], ax_debounce:ax_debounce_m1|q_reg[6]                               ;
-; rden                   ; Stuck at VCC              ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|rden_a_store, ;
-;                        ; due to stuck port data_in ; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store,     ;
-;                        ;                           ; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store,         ;
-;                        ;                           ; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store                ;
-+------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++---------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                     ; Reason for Removal ;
++---------------------------------------------------------------------------------------------------+--------------------+
+; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store ; Lost fanout        ;
+; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store     ; Lost fanout        ;
+; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store           ; Lost fanout        ;
+; Total Number of Removed Registers = 3                                                             ;                    ;
++---------------------------------------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -344,14 +409,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 525   ;
+; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Load   ; 65    ;
+; Number of registers using Asynchronous Clear ; 197   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 331   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[6]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[7]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[8]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[9]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[10]                                                                                                                                                  ; 2       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0]                                                                                                                                                   ; 1       ;
+; Total number of inverted registers = 13                                                                                                                                                                                                                                                                                         ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -388,6 +475,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+---------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                 ;
 +---------------------------------+--------------------+------+---------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0 ;
++-----------------+-------+------+----------------------+
+; Assignment      ; Value ; From ; To                   ;
++-----------------+-------+------+----------------------+
+; MESSAGE_DISABLE ; 13410 ; -    ; -                    ;
++-----------------+-------+------+----------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -670,6 +766,72 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                     ;
++-------------------------------------------------+--------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                            ; Type           ;
++-------------------------------------------------+--------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                    ; String         ;
+; sld_node_info                                   ; 805334528                                        ; Untyped        ;
+; SLD_SECTION_ID                                  ; hdl_signaltap_0                                  ; String         ;
+; SLD_IP_VERSION                                  ; 6                                                ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                ; Signed Integer ;
+; sld_data_bits                                   ; 8                                                ; Untyped        ;
+; sld_trigger_bits                                ; 8                                                ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                               ; Signed Integer ;
+; SLD_NODE_CRC_HIWORD                             ; 41394                                            ; Signed Integer ;
+; SLD_NODE_CRC_LOWORD                             ; 50132                                            ; Signed Integer ;
+; sld_incremental_routing                         ; 1                                                ; Untyped        ;
+; sld_sample_depth                                ; 1024                                             ; Untyped        ;
+; sld_segment_size                                ; 1024                                             ; Untyped        ;
+; sld_ram_block_type                              ; AUTO                                             ; Untyped        ;
+; sld_state_bits                                  ; 11                                               ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                         ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                ; Untyped        ;
+; sld_trigger_pipeline                            ; 0                                                ; Untyped        ;
+; sld_ram_pipeline                                ; 0                                                ; Untyped        ;
+; sld_counter_pipeline                            ; 0                                                ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                             ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                             ; String         ;
+; sld_inversion_mask_length                       ; 48                                               ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                        ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                              ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 8                                                ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                              ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                            ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                ; Signed Integer ;
+; SLD_CREATE_MONITOR_INTERFACE                    ; 0                                                ; Signed Integer ;
+; SLD_USE_JTAG_SIGNAL_ADAPTER                     ; 1                                                ; Signed Integer ;
++-------------------------------------------------+--------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                      ;
 +-------------------------------------------+-----------------------------------------------------------+
@@ -724,15 +886,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "triangular:Rom_triangular"                                                          ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "sawtooth:Rom_sawtooth"                                                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
@@ -743,6 +896,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "square:Rom_square"                                                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sin:Rom_sin"                                                                        ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -787,6 +949,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -807,8 +970,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Tap Logic Analyzer Settings                                                                                                                                                                                                                                      ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 8                   ; 8                ; 1024         ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
 +-----------------------------------------------------+
@@ -816,14 +989,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 12                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; boundary_port         ; 13                          ;
+; cycloneiii_ff         ; 10                          ;
+;     CLR               ; 9                           ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 9                           ;
+;     arith             ; 6                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 3                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 1                           ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 1.60                        ;
+; Average LUT depth     ; 0.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -836,13 +1016,70 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                    ;
++----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------------------------------------------+---------+
+; Name                 ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                                                               ; Details ;
++----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------------------------------------------+---------+
+; clk                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clk                                                                                             ; N/A     ;
+; dout[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[0] ; N/A     ;
+; dout[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[0] ; N/A     ;
+; dout[1]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[1] ; N/A     ;
+; dout[1]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[1] ; N/A     ;
+; dout[2]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[2] ; N/A     ;
+; dout[2]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[2] ; N/A     ;
+; dout[3]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[3] ; N/A     ;
+; dout[3]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[3] ; N/A     ;
+; dout[4]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[4] ; N/A     ;
+; dout[4]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[4] ; N/A     ;
+; dout[5]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[5] ; N/A     ;
+; dout[5]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[5] ; N/A     ;
+; dout[6]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[6] ; N/A     ;
+; dout[6]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[6] ; N/A     ;
+; dout[7]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[7] ; N/A     ;
+; dout[7]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[7] ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
++----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------------------------------------------+---------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 03:07:42 2025
+    Info: Processing started: Sun Apr 27 05:31:45 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off any_wave -c any_wave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -860,24 +1097,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file srv/cou
     Info (12023): Found entity 1: count File: D:/FPGAProject/any_wave/srv/count.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file srv/ax_debounce.v
     Info (12023): Found entity 1: ax_debounce File: D:/FPGAProject/any_wave/srv/ax_debounce.v Line: 31
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(23): created implicit net for "rst_n" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 23
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(24): created implicit net for "button1_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 24
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(45): created implicit net for "button2_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 45
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(66): created implicit net for "button3_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file ip_config/wave.v
+    Info (12023): Found entity 1: wave File: D:/FPGAProject/any_wave/ip_config/wave.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(26): created implicit net for "button1_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(47): created implicit net for "button2_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(68): created implicit net for "button3_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 68
 Info (12127): Elaborating entity "any_wave" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at any_wave.v(121): incomplete case statement has no default case item File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 121
-Warning (10240): Verilog HDL Always Construct warning at any_wave.v(119): inferring latch(es) for variable "dout_temp", which holds its previous value in one or more paths through the always construct File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[0]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[1]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[2]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[3]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[4]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[5]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[6]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (10041): Inferred latch for "dout_temp[7]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Info (12128): Elaborating entity "count" for hierarchy "count:count_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 28
-Info (12128): Elaborating entity "ax_debounce" for hierarchy "ax_debounce:ax_debounce_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 37
-Info (12128): Elaborating entity "sin" for hierarchy "sin:Rom_sin" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 86
+Warning (10036): Verilog HDL or VHDL warning at any_wave.v(120): object "dout_temp" assigned a value but never read File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 120
+Warning (10270): Verilog HDL Case Statement warning at any_wave.v(123): incomplete case statement has no default case item File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 123
+Warning (10230): Verilog HDL assignment warning at any_wave.v(136): truncated value with size 32 to match size of target (8) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 136
+Info (12128): Elaborating entity "count" for hierarchy "count:count_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 30
+Info (12128): Elaborating entity "ax_debounce" for hierarchy "ax_debounce:ax_debounce_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 39
+Info (12128): Elaborating entity "sin" for hierarchy "sin:Rom_sin" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 88
 Info (12128): Elaborating entity "altsyncram" for hierarchy "sin:Rom_sin|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 84
 Info (12130): Elaborated megafunction instantiation "sin:Rom_sin|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 84
 Info (12133): Instantiated megafunction "sin:Rom_sin|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 84
@@ -898,7 +1129,7 @@ Info (12133): Instantiated megafunction "sin:Rom_sin|altsyncram:altsyncram_compo
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dha1.tdf
     Info (12023): Found entity 1: altsyncram_dha1 File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_dha1" for hierarchy "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "square" for hierarchy "square:Rom_square" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 94
+Info (12128): Elaborating entity "square" for hierarchy "square:Rom_square" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 96
 Info (12128): Elaborating entity "altsyncram" for hierarchy "square:Rom_square|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/square.v Line: 84
 Info (12130): Elaborated megafunction instantiation "square:Rom_square|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/square.v Line: 84
 Info (12133): Instantiated megafunction "square:Rom_square|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/square.v Line: 84
@@ -919,7 +1150,7 @@ Info (12133): Instantiated megafunction "square:Rom_square|altsyncram:altsyncram
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kra1.tdf
     Info (12023): Found entity 1: altsyncram_kra1 File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_kra1" for hierarchy "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "sawtooth" for hierarchy "sawtooth:Rom_sawtooth" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 101
+Info (12128): Elaborating entity "sawtooth" for hierarchy "sawtooth:Rom_sawtooth" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 103
 Info (12128): Elaborating entity "altsyncram" for hierarchy "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sawtooth.v Line: 84
 Info (12130): Elaborated megafunction instantiation "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sawtooth.v Line: 84
 Info (12133): Instantiated megafunction "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/sawtooth.v Line: 84
@@ -940,7 +1171,7 @@ Info (12133): Instantiated megafunction "sawtooth:Rom_sawtooth|altsyncram:altsyn
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s2b1.tdf
     Info (12023): Found entity 1: altsyncram_s2b1 File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_s2b1" for hierarchy "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "triangular" for hierarchy "triangular:Rom_triangular" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 108
+Info (12128): Elaborating entity "triangular" for hierarchy "triangular:Rom_triangular" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 110
 Info (12128): Elaborating entity "altsyncram" for hierarchy "triangular:Rom_triangular|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/triangular.v Line: 84
 Info (12130): Elaborated megafunction instantiation "triangular:Rom_triangular|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/triangular.v Line: 84
 Info (12133): Instantiated megafunction "triangular:Rom_triangular|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/triangular.v Line: 84
@@ -961,88 +1192,51 @@ Info (12133): Instantiated megafunction "triangular:Rom_triangular|altsyncram:al
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s8b1.tdf
     Info (12023): Found entity 1: altsyncram_s8b1 File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_s8b1" for hierarchy "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "rst_n" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 23
-    Warning (12110): Net "address[7]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[6]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[5]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[4]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[3]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-    Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
-Warning (14026): LATCH primitive "dout_temp[3]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[4]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[5]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[6]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[7]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[1]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[0]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
-Warning (14026): LATCH primitive "dout_temp[2]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i724.tdf
+    Info (12023): Found entity 1: altsyncram_i724 File: D:/FPGAProject/any_wave/db/altsyncram_i724.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_psc.tdf
+    Info (12023): Found entity 1: mux_psc File: D:/FPGAProject/any_wave/db/mux_psc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
+    Info (12023): Found entity 1: decode_dvf File: D:/FPGAProject/any_wave/db/decode_dvf.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vei.tdf
+    Info (12023): Found entity 1: cntr_vei File: D:/FPGAProject/any_wave/db/cntr_vei.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_89j.tdf
+    Info (12023): Found entity 1: cntr_89j File: D:/FPGAProject/any_wave/db/cntr_89j.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_cgi.tdf
+    Info (12023): Found entity 1: cntr_cgi File: D:/FPGAProject/any_wave/db/cntr_cgi.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_rgc.tdf
+    Info (12023): Found entity 1: cmpr_rgc File: D:/FPGAProject/any_wave/db/cmpr_rgc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
+    Info (12023): Found entity 1: cntr_23j File: D:/FPGAProject/any_wave/db/cntr_23j.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
+    Info (12023): Found entity 1: cmpr_ngc File: D:/FPGAProject/any_wave/db/cmpr_ngc.tdf Line: 22
+Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2025.04.27.05:31:56 Progress: Loading sld9fdc316e/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9fdc316e/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 36
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 58
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 80
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[3]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 102
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[4]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 124
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 146
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 168
-        Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 190
         Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 36
         Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 58
         Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 80
@@ -1059,23 +1253,32 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 146
         Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 168
         Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 190
-Info (17049): 78 registers lost all their fanouts during netlist optimizations.
-Info (17036): Removed 7 MSB VCC or GND address nodes from RAM block "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|ALTSYNCRAM" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 31
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 36
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 58
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 80
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[3]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 102
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[4]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 124
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 146
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 168
+        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 190
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 49 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 3
-    Warning (15610): No output dependent on input pin "key2" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 4
-    Warning (15610): No output dependent on input pin "key3" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 5
-Info (21057): Implemented 21 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 1 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
-    Info: Peak virtual memory: 4757 megabytes
-    Info: Processing ended: Sun Apr 27 03:07:50 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:15
+    Warning (15610): No output dependent on input pin "key1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 6
+    Warning (15610): No output dependent on input pin "key2" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 7
+    Warning (15610): No output dependent on input pin "key3" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
+Info (21057): Implemented 766 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 732 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4906 megabytes
+    Info: Processing ended: Sun Apr 27 05:32:06 2025
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:34
 
 

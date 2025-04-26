@@ -1,11 +1,13 @@
 module any_wave(
-	input clk,
-	input key1,
-	input key2,
-	input key3,
-	
-	output [7:0] dout
+	clk,key1,key2,key3,rst_n,dout
 );
+
+input clk;
+input key1;
+input key2;
+input key3;
+input rst_n;
+output [7:0] dout;
 
 reg rden;
 reg [7:0] address;
@@ -103,7 +105,7 @@ sawtooth Rom_sawtooth(
 triangular Rom_triangular(
 	.clock	(clk), // input clka
 	.address	(address), // input [7 : 0] addra
-	.q			(triangular_wave), // output [7 : 0] douta
+	.q			(dout), // output [7 : 0] douta
 	.rden		(rden)
 );
 
@@ -119,13 +121,19 @@ reg [7:0] dout_temp;
 always @(negedge rst_n or posedge clk)
 begin
 	case(count_key1)
-		3'b000:dout_temp <= sin_wave;
-		3'b001:dout_temp <= sin_wave;
-		3'b010:dout_temp <= sin_wave;
-		3'b011:dout_temp <= sin_wave;
+		4'd0:dout_temp <= sin_wave;
+		4'd1:dout_temp <= sin_wave;
+		4'd2:dout_temp <= sin_wave;
+		4'd3:dout_temp <= sin_wave;
 	endcase
 end
 
-assign dout = dout_temp << count_key2;
+always @(negedge rst_n or posedge clk)
+begin
+	if(!rst_n)
+		address <= 0;
+	else
+		address <= address + 1;
+end
 
 endmodule

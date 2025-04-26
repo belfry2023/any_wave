@@ -3,14 +3,15 @@ clk => clk.IN10
 key1 => key1.IN1
 key2 => key2.IN1
 key3 => key3.IN1
-dout[0] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[1] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[4] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[5] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
-dout[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+rst_n => rst_n.IN3
+dout[0] <= triangular:Rom_triangular.q
+dout[1] <= triangular:Rom_triangular.q
+dout[2] <= triangular:Rom_triangular.q
+dout[3] <= triangular:Rom_triangular.q
+dout[4] <= triangular:Rom_triangular.q
+dout[5] <= triangular:Rom_triangular.q
+dout[6] <= triangular:Rom_triangular.q
+dout[7] <= triangular:Rom_triangular.q
 
 
 |any_wave|count:count_m1

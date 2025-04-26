@@ -17,10 +17,7 @@
 # ** Warning: (vlib-34) Library already exists at "verilog_libs/altera_ver".
 # 
 # vmap altera_ver ./verilog_libs/altera_ver
-# Copying D:\modeltech64\win64/../modelsim.ini to modelsim.ini
-# Modifying modelsim.ini
-# ** Warning: Copied D:\modeltech64\win64/../modelsim.ini to modelsim.ini.
-#          Updated modelsim.ini.
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # vlog -vlog01compat -work altera_ver {d:/intelfpga_lite/17.1/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module global
@@ -108,7 +105,7 @@
 # ** Warning: (vlib-34) Library already exists at "verilog_libs/lpm_ver".
 # 
 # vmap lpm_ver ./verilog_libs/lpm_ver
-# Modifying modelsim.ini
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # vlog -vlog01compat -work lpm_ver {d:/intelfpga_lite/17.1/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module LPM_MEMORY_INITIALIZATION
@@ -178,7 +175,7 @@
 # ** Warning: (vlib-34) Library already exists at "verilog_libs/sgate_ver".
 # 
 # vmap sgate_ver ./verilog_libs/sgate_ver
-# Modifying modelsim.ini
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # vlog -vlog01compat -work sgate_ver {d:/intelfpga_lite/17.1/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module oper_add
@@ -226,7 +223,7 @@
 # ** Warning: (vlib-34) Library already exists at "verilog_libs/altera_mf_ver".
 # 
 # vmap altera_mf_ver ./verilog_libs/altera_mf_ver
-# Modifying modelsim.ini
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # vlog -vlog01compat -work altera_mf_ver {d:/intelfpga_lite/17.1/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module lcell
@@ -362,7 +359,7 @@
 # ** Warning: (vlib-34) Library already exists at "verilog_libs/altera_lnsim_ver".
 # 
 # vmap altera_lnsim_ver ./verilog_libs/altera_lnsim_ver
-# Modifying modelsim.ini
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # vlog -sv -work altera_lnsim_ver {d:/intelfpga_lite/17.1/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling package altera_lnsim_functions
@@ -451,7 +448,7 @@
 # ** Warning: (vlib-34) Library already exists at "verilog_libs/cycloneive_ver".
 # 
 # vmap cycloneive_ver ./verilog_libs/cycloneive_ver
-# Modifying modelsim.ini
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # vlog -vlog01compat -work cycloneive_ver {d:/intelfpga_lite/17.1/quartus/eda/sim_lib/cycloneive_atoms.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling UDP CYCLONEIVE_PRIM_DFFE
@@ -536,7 +533,7 @@
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Modifying modelsim.ini
+# Modifying D:\modeltech64\win64/../modelsim.ini
 # 
 # vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/ip_config {D:/FPGAProject/any_wave/ip_config/sin.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
@@ -584,35 +581,10 @@
 # vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/simulation/modelsim {D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module any_wave_vlg_tst
+# ** Error: D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt(54): (vlog-2730) Undefined variable: 'rst_n'.
 # 
-# Top level modules:
-# 	any_wave_vlg_tst
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  any_wave_vlg_tst
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps any_wave_vlg_tst 
-vlog -reportprogress 300 -work work D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt
-# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
-# -- Compiling module any_wave_vlg_tst
-# 
-# Top level modules:
-# 	any_wave_vlg_tst
-vlog -reportprogress 300 -work work D:/FPGAProject/any_wave/simulation/modelsim/any_wave_8_1200mv_0c_slow.vo
-# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
-# -- Compiling module any_wave
-# -- Compiling module hard_block
-# 
-# Top level modules:
-# 	any_wave
-vlog -reportprogress 300 -work work D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt
-# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
-# -- Compiling module any_wave_vlg_tst
-# 
-# Top level modules:
-# 	any_wave_vlg_tst
-# Break key hit 
-# Break key hit 
-# Break key hit 
-# Break key hit 
-# Break key hit 
-# Break key hit 
-# Break key hit 
+# ** Error: D:/modeltech64/win64/vlog failed.
+# Error in macro ./any_wave_run_msim_rtl_verilog.do line 44
+# D:/modeltech64/win64/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/simulation/modelsim {D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt}"
