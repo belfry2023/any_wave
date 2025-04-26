@@ -1,0 +1,20 @@
+module any_wave(
+	input clk,
+	input key1,
+	input key2,
+	input key3,
+	
+	output [7:0] dout
+);
+
+reg rden;
+reg [7:0] address;
+
+wire [7:0] sin_wave;
+wire [7:0] square_wave;
+wire [7:0] sawtooth_wave;
+wire [7:0] triangular_wave;
+
+wire [3:0] count_key1;
+wire botton1_negedge;
+wire t1

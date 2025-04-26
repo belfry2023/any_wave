@@ -1,0 +1,100 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\FPGAProject\any_wave\simulation\modelsim
+vany_wave_vlg_tst
+!i10b 1
+!s100 iJZ:g^LiG<GHgn[h6GIUP1
+Ijh1b1;l^M;0MliB@]fnmf3
+V@f^5b<TDO6KReA<=j6GP82
+Z1 dD:\FPGAProject\any_wave\simulation\modelsim
+w1745689272
+8D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt
+FD:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt
+L0 28
+Z2 OL;L;10.1c;51
+r1
+!s85 0
+31
+!s108 1745689486.617000
+!s107 D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGAProject/any_wave/simulation/modelsim|D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt|
+Z3 o-vlog01compat -work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s92 -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/simulation/modelsim -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vsawtooth
+IoM55o1e=9B@NX`gb7KUze3
+Vi1Ll?:J@?iL4<mIYeb2Ca1
+R1
+w1745674384
+8D:/FPGAProject/any_wave/ip_config/sawtooth.v
+FD:/FPGAProject/any_wave/ip_config/sawtooth.v
+L0 39
+R2
+r1
+31
+R3
+Z4 !s92 -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/ip_config -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 cemMz3c>^:EGjkRZTWJo_1
+!s85 0
+!s108 1745689486.577000
+!s107 D:/FPGAProject/any_wave/ip_config/sawtooth.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGAProject/any_wave/ip_config|D:/FPGAProject/any_wave/ip_config/sawtooth.v|
+vsin
+IK6ij_2j5MfQmTVIk3mDEX0
+VnY`57`SP?z<=NMQViOG5@3
+R1
+w1745674241
+8D:/FPGAProject/any_wave/ip_config/sin.v
+FD:/FPGAProject/any_wave/ip_config/sin.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 jdi]3d_zDEI9HZ?NVZ>A80
+!s85 0
+!s108 1745689486.468000
+!s107 D:/FPGAProject/any_wave/ip_config/sin.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGAProject/any_wave/ip_config|D:/FPGAProject/any_wave/ip_config/sin.v|
+vsquare
+IIBGBhI]iVkK2DDcaZXmD^1
+Vffg4M@zU_IS8X6<1KV44S3
+R1
+w1745674287
+8D:/FPGAProject/any_wave/ip_config/square.v
+FD:/FPGAProject/any_wave/ip_config/square.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 YgYULA?zGzGPzDP<hEid[3
+!s85 0
+!s108 1745689486.506000
+!s107 D:/FPGAProject/any_wave/ip_config/square.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGAProject/any_wave/ip_config|D:/FPGAProject/any_wave/ip_config/square.v|
+vtriangular
+Id^?b7:]2O7aY4cI8LCGXL3
+Vm_900nWXn5O:ihzcH9MYJ3
+R1
+w1745674333
+8D:/FPGAProject/any_wave/ip_config/triangular.v
+FD:/FPGAProject/any_wave/ip_config/triangular.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 C>REDQ6_Ak:UEKo]SA?Jh0
+!s85 0
+!s108 1745689486.541000
+!s107 D:/FPGAProject/any_wave/ip_config/triangular.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/FPGAProject/any_wave/ip_config|D:/FPGAProject/any_wave/ip_config/triangular.v|
