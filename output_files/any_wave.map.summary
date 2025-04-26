@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Apr 27 02:20:40 2025
+Analysis & Synthesis Status : Successful - Sun Apr 27 03:07:50 2025
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : any_wave
 Top-level Entity Name : any_wave
 Family : Cyclone IV E
-Total logic elements : 0
-    Total combinational functions : 0
+Total logic elements : 1
+    Total combinational functions : 1
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 12
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 16
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

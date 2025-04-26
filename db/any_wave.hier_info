@@ -3,14 +3,14 @@ clk => clk.IN10
 key1 => key1.IN1
 key2 => key2.IN1
 key3 => key3.IN1
-dout[0] <= <GND>
-dout[1] <= <GND>
-dout[2] <= <GND>
-dout[3] <= <GND>
-dout[4] <= <GND>
-dout[5] <= <GND>
-dout[6] <= <GND>
-dout[7] <= <GND>
+dout[0] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |any_wave|count:count_m1

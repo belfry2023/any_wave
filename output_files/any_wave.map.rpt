@@ -1,5 +1,5 @@
 Analysis & Synthesis report for any_wave
-Sun Apr 27 02:20:40 2025
+Sun Apr 27 03:07:50 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,26 +13,26 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated
- 13. Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated
- 14. Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated
- 15. Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated
- 16. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m1
- 17. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m2
- 18. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m3
- 19. Parameter Settings for User Entity Instance: sin:Rom_sin|altsyncram:altsyncram_component
- 20. Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component
- 21. Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component
- 22. Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component
- 23. altsyncram Parameter Settings by Entity Instance
- 24. Port Connectivity Checks: "triangular:Rom_triangular"
- 25. Port Connectivity Checks: "sawtooth:Rom_sawtooth"
- 26. Port Connectivity Checks: "square:Rom_square"
- 27. Port Connectivity Checks: "sin:Rom_sin"
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated
+ 14. Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated
+ 15. Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated
+ 16. Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated
+ 17. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m1
+ 18. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m2
+ 19. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m3
+ 20. Parameter Settings for User Entity Instance: sin:Rom_sin|altsyncram:altsyncram_component
+ 21. Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component
+ 23. Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "triangular:Rom_triangular"
+ 26. Port Connectivity Checks: "sawtooth:Rom_sawtooth"
+ 27. Port Connectivity Checks: "square:Rom_square"
  28. Port Connectivity Checks: "ax_debounce:ax_debounce_m3"
  29. Port Connectivity Checks: "count:count_m3"
  30. Port Connectivity Checks: "ax_debounce:ax_debounce_m2"
@@ -67,18 +67,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 27 02:20:40 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 27 03:07:50 2025       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; any_wave                                    ;
 ; Top-level Entity Name              ; any_wave                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
+; Total logic elements               ; 1                                           ;
+;     Total combinational functions  ; 1                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 12                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 16                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -223,15 +223,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
+; Estimated Total logic elements              ; 1     ;
 ;                                             ;       ;
-; Total combinational functions               ; 0     ;
+; Total combinational functions               ; 1     ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 0     ;
 ;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
+;     -- <=2 input functions                  ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
+;     -- normal mode                          ; 1     ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
@@ -239,24 +240,37 @@ refer to the applicable agreement for further details.
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 12    ;
+; Total memory bits                           ; 16    ;
 ;                                             ;       ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ;                                             ;       ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 12    ;
-; Average fan-out                             ; 0.50  ;
+; Maximum fan-out node                        ; ~GND  ;
+; Maximum fan-out                             ; 8     ;
+; Total fan-out                               ; 36    ;
+; Average fan-out                             ; 1.09  ;
 +---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |any_wave                  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |any_wave           ; any_wave    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
+; |any_wave                                 ; 1 (1)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 12   ; 0            ; |any_wave                                                                            ; any_wave        ; work         ;
+;    |sin:Rom_sin|                          ; 0 (0)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin                                                                ; sin             ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_dha1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16          ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated ; altsyncram_dha1 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
++---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------+
+; Name                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                ;
++---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------+
+; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; ./mif/sin_wave.mif ;
++---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -281,20 +295,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store     ; Lost fanout                            ;
 ; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store         ; Lost fanout                            ;
 ; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store               ; Lost fanout                            ;
-; Total Number of Removed Registers = 5                                                                 ;                                        ;
+; count:count_m2|data[0..3]                                                                             ; Stuck at GND due to stuck port clear   ;
+; ax_debounce:ax_debounce_m2|button_negedge                                                             ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m2|button_out_d0                                                              ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m2|button_out                                                                 ; Lost fanout                            ;
+; count:count_m1|data[0..3]                                                                             ; Stuck at GND due to stuck port clear   ;
+; ax_debounce:ax_debounce_m1|button_negedge                                                             ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m1|button_out_d0                                                              ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m1|button_out                                                                 ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m2|DFF1                                                                       ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m2|DFF2                                                                       ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m2|q_reg[0..31]                                                               ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m1|DFF1                                                                       ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m1|DFF2                                                                       ; Lost fanout                            ;
+; ax_debounce:ax_debounce_m1|q_reg[0..31]                                                               ; Lost fanout                            ;
+; Total Number of Removed Registers = 87                                                                ;                                        ;
 +-------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                        ;
-+---------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                                 ;
-+---------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-; rden          ; Stuck at VCC              ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|rden_a_store, ;
-;               ; due to stuck port data_in ; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store,     ;
-;               ;                           ; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store,         ;
-;               ;                           ; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store                ;
-+---------------+---------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
++------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+; Register name          ; Reason for Removal        ; Registers Removed due to This Register                                                                 ;
++------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+; count:count_m2|data[3] ; Stuck at GND              ; ax_debounce:ax_debounce_m2|button_negedge,                                                             ;
+;                        ; due to stuck port clear   ; ax_debounce:ax_debounce_m2|button_out_d0, ax_debounce:ax_debounce_m2|button_out,                       ;
+;                        ;                           ; ax_debounce:ax_debounce_m2|DFF2, ax_debounce:ax_debounce_m2|q_reg[31],                                 ;
+;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[30], ax_debounce:ax_debounce_m2|q_reg[19],                            ;
+;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[18], ax_debounce:ax_debounce_m2|q_reg[17],                            ;
+;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[16], ax_debounce:ax_debounce_m2|q_reg[14],                            ;
+;                        ;                           ; ax_debounce:ax_debounce_m2|q_reg[9], ax_debounce:ax_debounce_m2|q_reg[6]                               ;
+; count:count_m1|data[3] ; Stuck at GND              ; ax_debounce:ax_debounce_m1|button_negedge,                                                             ;
+;                        ; due to stuck port clear   ; ax_debounce:ax_debounce_m1|button_out_d0, ax_debounce:ax_debounce_m1|button_out,                       ;
+;                        ;                           ; ax_debounce:ax_debounce_m1|DFF2, ax_debounce:ax_debounce_m1|q_reg[31],                                 ;
+;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[30], ax_debounce:ax_debounce_m1|q_reg[19],                            ;
+;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[18], ax_debounce:ax_debounce_m1|q_reg[17],                            ;
+;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[16], ax_debounce:ax_debounce_m1|q_reg[14],                            ;
+;                        ;                           ; ax_debounce:ax_debounce_m1|q_reg[9], ax_debounce:ax_debounce_m1|q_reg[6]                               ;
+; rden                   ; Stuck at VCC              ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|rden_a_store, ;
+;                        ; due to stuck port data_in ; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store,     ;
+;                        ;                           ; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store,         ;
+;                        ;                           ; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store                ;
++------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -708,15 +750,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sin:Rom_sin"                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------+
 ; Port Connectivity Checks: "ax_debounce:ax_debounce_m3"      ;
 +----------------+--------+----------+------------------------+
@@ -754,7 +787,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -775,7 +807,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -789,6 +820,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_lcell_comb ; 1                           ;
 ;     normal            ; 1                           ;
 ;         0 data inputs ; 1                           ;
+; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 0.00                        ;
 ; Average LUT depth     ; 0.00                        ;
@@ -810,7 +842,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 02:20:33 2025
+    Info: Processing started: Sun Apr 27 03:07:42 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off any_wave -c any_wave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -833,7 +865,16 @@ Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(24): created imp
 Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(45): created implicit net for "button2_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 45
 Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(66): created implicit net for "button3_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 66
 Info (12127): Elaborating entity "any_wave" for the top level hierarchy
-Warning (10034): Output port "dout" at any_wave.v(8) has no driver File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
+Warning (10270): Verilog HDL Case Statement warning at any_wave.v(121): incomplete case statement has no default case item File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 121
+Warning (10240): Verilog HDL Always Construct warning at any_wave.v(119): inferring latch(es) for variable "dout_temp", which holds its previous value in one or more paths through the always construct File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[0]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[1]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[2]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[3]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[4]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[5]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[6]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Info (10041): Inferred latch for "dout_temp[7]" at any_wave.v(119) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
 Info (12128): Elaborating entity "count" for hierarchy "count:count_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 28
 Info (12128): Elaborating entity "ax_debounce" for hierarchy "ax_debounce:ax_debounce_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 37
 Info (12128): Elaborating entity "sin" for hierarchy "sin:Rom_sin" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 86
@@ -984,6 +1025,14 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "address[2]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
     Warning (12110): Net "address[1]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
     Warning (12110): Net "address[0]" is missing source, defaulting to GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 11
+Warning (14026): LATCH primitive "dout_temp[3]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[4]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[5]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[6]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[7]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[1]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[0]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
+Warning (14026): LATCH primitive "dout_temp[2]" is permanently enabled File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 119
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 36
@@ -1010,38 +1059,23 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 146
         Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 168
         Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 190
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 36
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 58
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 80
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[3]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 102
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[4]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 124
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 146
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 168
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 190
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "dout[0]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[1]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[2]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[3]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[4]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[5]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[6]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-    Warning (13410): Pin "dout[7]" is stuck at GND File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17049): 78 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 7 MSB VCC or GND address nodes from RAM block "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|ALTSYNCRAM" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 31
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 2
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 3
     Warning (15610): No output dependent on input pin "key2" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 4
     Warning (15610): No output dependent on input pin "key3" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 5
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 21 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 8 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 118 warnings
-    Info: Peak virtual memory: 4751 megabytes
-    Info: Processing ended: Sun Apr 27 02:20:40 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21061): Implemented 1 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
+    Info: Peak virtual memory: 4757 megabytes
+    Info: Processing ended: Sun Apr 27 03:07:50 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:15
 
 

@@ -115,4 +115,17 @@ begin
 		rden <= 1;
 end
 
+reg [7:0] dout_temp;
+always @(negedge rst_n or posedge clk)
+begin
+	case(count_key1)
+		3'b000:dout_temp <= sin_wave;
+		3'b001:dout_temp <= sin_wave;
+		3'b010:dout_temp <= sin_wave;
+		3'b011:dout_temp <= sin_wave;
+	endcase
+end
+
+assign dout = dout_temp << count_key2;
+
 endmodule

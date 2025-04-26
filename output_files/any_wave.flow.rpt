@@ -1,5 +1,5 @@
 Flow report for any_wave
-Sun Apr 27 02:20:48 2025
+Sun Apr 27 03:08:18 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Apr 27 02:20:48 2025       ;
+; Flow Status                        ; Successful - Sun Apr 27 03:08:18 2025       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; any_wave                                    ;
 ; Top-level Entity Name              ; any_wave                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6F17C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 0 / 6,272 ( 0 % )                           ;
-;     Total combinational functions  ; 0 / 6,272 ( 0 % )                           ;
+; Total logic elements               ; 1 / 6,272 ( < 1 % )                         ;
+;     Total combinational functions  ; 1 / 6,272 ( < 1 % )                         ;
 ;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 12 / 180 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
+; Total memory bits                  ; 16 / 276,480 ( < 1 % )                      ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
 ; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/27/2025 02:20:33 ;
+; Start date & time ; 04/27/2025 03:07:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; any_wave            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 193675818380838.174569163307380        ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 193675818380838.174569446328340        ; --            ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; any_wave_vlg_tst ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; any_wave_vlg_tst                       ; --            ; --          ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation   ;
@@ -109,12 +109,13 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4741 MB             ; 00:00:14                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 6456 MB             ; 00:00:04                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 4673 MB             ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4859 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4640 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4747 MB             ; 00:00:15                           ;
+; Fitter                    ; 00:00:03     ; 1.1                     ; 6468 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4684 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.1                     ; 4863 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4633 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:24                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,6 +129,7 @@ refer to the applicable agreement for further details.
 ; Assembler                 ; belfry2023       ; Windows 10 ; 10.0       ; x86_64         ;
 ; TimeQuest Timing Analyzer ; belfry2023       ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer        ; belfry2023       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; belfry2023       ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 
@@ -139,6 +141,7 @@ quartus_fit --read_settings_files=off --write_settings_files=off any_wave -c any
 quartus_asm --read_settings_files=off --write_settings_files=off any_wave -c any_wave
 quartus_sta any_wave -c any_wave
 quartus_eda --read_settings_files=off --write_settings_files=off any_wave -c any_wave
+quartus_eda --read_settings_files=on --write_settings_files=off any_wave -c any_wave --gen_testbench
 
 
 

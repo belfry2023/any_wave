@@ -17,7 +17,7 @@
 // suit user's needs .Comments are provided in each section to help the user    
 // fill out necessary details.                                                  
 // *****************************************************************************
-// Generated on "04/27/2025 01:41:12"
+// Generated on "04/27/2025 03:08:18"
                                                                                 
 // Verilog Test Bench template for design : any_wave
 // 
@@ -34,7 +34,6 @@ reg clk;
 reg key1;
 reg key2;
 reg key3;
-reg rst_n;
 // wires                                               
 wire [7:0]  dout;
 
@@ -45,8 +44,7 @@ any_wave i1 (
 	.dout(dout),
 	.key1(key1),
 	.key2(key2),
-	.key3(key3),
-	.rst_n(rst_n)
+	.key3(key3)
 );
 initial                                                
 begin                                                  
