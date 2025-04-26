@@ -1,5 +1,5 @@
 Analysis & Synthesis report for any_wave
-Sun Apr 27 05:32:06 2025
+Sun Apr 27 06:06:14 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 27 05:32:06 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 27 06:06:14 2025       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; any_wave                                    ;
 ; Top-level Entity Name              ; any_wave                                    ;
@@ -1079,7 +1079,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 05:31:45 2025
+    Info: Processing started: Sun Apr 27 06:05:54 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off any_wave -c any_wave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -1212,7 +1212,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: D:/FPGAProject/any_wave/db/cmpr_ngc.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.04.27.05:31:56 Progress: Loading sld9fdc316e/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.04.27.06:06:04 Progress: Loading sld9fdc316e/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1276,9 +1276,9 @@ Info (21057): Implemented 766 device resources after synthesis - the final resou
     Info (21061): Implemented 732 logic cells
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 4906 megabytes
-    Info: Processing ended: Sun Apr 27 05:32:06 2025
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Peak virtual memory: 4905 megabytes
+    Info: Processing ended: Sun Apr 27 06:06:14 2025
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:33
 
 

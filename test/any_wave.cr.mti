@@ -1,9 +1,11 @@
-D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt {0 {vlog -work work -novopt D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt
+D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt {1 {vlog -work work -novopt D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module any_wave_vlg_tst
-** Error: D:/FPGAProject/any_wave/simulation/modelsim/any_wave.vt(75): near "endmodule": syntax error, unexpected endmodule, expecting ';'
 
-} {4.0 5.0} {}} D:/FPGAProject/any_wave/simulation/modelsim/any_wave_min_1200mv_0c_fast.vo {1 {vlog -work work -novopt D:/FPGAProject/any_wave/simulation/modelsim/any_wave_min_1200mv_0c_fast.vo
+Top level modules:
+	any_wave_vlg_tst
+
+} {} {}} D:/FPGAProject/any_wave/simulation/modelsim/any_wave_min_1200mv_0c_fast.vo {1 {vlog -work work -novopt D:/FPGAProject/any_wave/simulation/modelsim/any_wave_min_1200mv_0c_fast.vo
 Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 -- Compiling module any_wave
 
