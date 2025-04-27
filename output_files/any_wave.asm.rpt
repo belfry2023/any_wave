@@ -1,5 +1,5 @@
 Assembler report for any_wave
-Sun Apr 27 06:06:22 2025
+Sun Apr 27 14:51:32 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: D:/FPGAProject/any_wave/output_files/any_wave.sof
+  6. Assembler Device Options: D:/FPGAProject/test05/output_files/any_wave.sof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Apr 27 06:06:22 2025 ;
+; Assembler Status      ; Successful - Sun Apr 27 14:51:32 2025 ;
 ; Revision Name         ; any_wave                              ;
 ; Top-level Entity Name ; any_wave                              ;
 ; Family                ; Cyclone IV E                          ;
@@ -63,23 +63,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+---------------------------------------------------+
-; Assembler Generated Files                         ;
-+---------------------------------------------------+
-; File Name                                         ;
-+---------------------------------------------------+
-; D:/FPGAProject/any_wave/output_files/any_wave.sof ;
-+---------------------------------------------------+
++-------------------------------------------------+
+; Assembler Generated Files                       ;
++-------------------------------------------------+
+; File Name                                       ;
++-------------------------------------------------+
+; D:/FPGAProject/test05/output_files/any_wave.sof ;
++-------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; Assembler Device Options: D:/FPGAProject/any_wave/output_files/any_wave.sof ;
-+----------------+------------------------------------------------------------+
-; Option         ; Setting                                                    ;
-+----------------+------------------------------------------------------------+
-; JTAG usercode  ; 0x000E643F                                                 ;
-; Checksum       ; 0x000E643F                                                 ;
-+----------------+------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Device Options: D:/FPGAProject/test05/output_files/any_wave.sof ;
++----------------+----------------------------------------------------------+
+; Option         ; Setting                                                  ;
++----------------+----------------------------------------------------------+
+; JTAG usercode  ; 0x0011830D                                               ;
+; Checksum       ; 0x0011830D                                               ;
++----------------+----------------------------------------------------------+
 
 
 +--------------------+
@@ -88,14 +88,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 06:06:20 2025
+    Info: Processing started: Sun Apr 27 14:51:30 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off any_wave -c any_wave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4688 megabytes
-    Info: Processing ended: Sun Apr 27 06:06:22 2025
+    Info: Peak virtual memory: 4691 megabytes
+    Info: Processing ended: Sun Apr 27 14:51:32 2025
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sun Apr 27 06:06:19 2025
+Fitter Status : Successful - Sun Apr 27 14:51:29 2025
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : any_wave
 Top-level Entity Name : any_wave
 Family : Cyclone IV E
 Device : EP4CE6F17C8
 Timing Models : Final
-Total logic elements : 697 / 6,272 ( 11 % )
-    Total combinational functions : 495 / 6,272 ( 8 % )
-    Dedicated logic registers : 525 / 6,272 ( 8 % )
-Total registers : 525
+Total logic elements : 921 / 6,272 ( 15 % )
+    Total combinational functions : 717 / 6,272 ( 11 % )
+    Dedicated logic registers : 607 / 6,272 ( 10 % )
+Total registers : 607
 Total pins : 13 / 180 ( 7 % )
 Total virtual pins : 0
-Total memory bits : 10,240 / 276,480 ( 4 % )
+Total memory bits : 16,384 / 276,480 ( 6 % )
 Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
 Total PLLs : 0 / 2 ( 0 % )
