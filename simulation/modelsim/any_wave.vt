@@ -62,7 +62,9 @@ key3 = 1'b0;
 $display("Running testbench");                       
 end                                                    
 always#10 clk = ~clk;
-always#5000 key1 = ~key1;
+always#400000 key1 = ~key1;
+always#100000 key3 = ~key3;
+always#200000 key2 = ~key2;
 // optional sensitivity list                           
 // @(event1 or event2 or .... eventn)                  
 // begin                                                  

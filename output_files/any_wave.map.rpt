@@ -1,5 +1,5 @@
 Analysis & Synthesis report for any_wave
-Sun Apr 27 06:06:14 2025
+Mon Apr 28 19:15:08 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,37 +15,30 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated
- 14. Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated
- 15. Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated
- 16. Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated
- 17. Source assignments for sld_signaltap:auto_signaltap_0
- 18. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m1
- 19. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m2
- 20. Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m3
- 21. Parameter Settings for User Entity Instance: sin:Rom_sin|altsyncram:altsyncram_component
- 22. Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component
- 23. Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component
- 24. Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component
- 25. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 26. altsyncram Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "sawtooth:Rom_sawtooth"
- 28. Port Connectivity Checks: "square:Rom_square"
- 29. Port Connectivity Checks: "sin:Rom_sin"
- 30. Port Connectivity Checks: "ax_debounce:ax_debounce_m3"
- 31. Port Connectivity Checks: "count:count_m3"
- 32. Port Connectivity Checks: "ax_debounce:ax_debounce_m2"
- 33. Port Connectivity Checks: "count:count_m2"
- 34. Port Connectivity Checks: "ax_debounce:ax_debounce_m1"
- 35. Port Connectivity Checks: "count:count_m1"
- 36. Signal Tap Logic Analyzer Settings
- 37. Post-Synthesis Netlist Statistics for Top Partition
- 38. Elapsed Time Per Partition
- 39. Connections to In-System Debugging Instance "auto_signaltap_0"
- 40. Analysis & Synthesis Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_26a1:auto_generated
+ 16. Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_9ga1:auto_generated
+ 17. Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_hna1:auto_generated
+ 18. Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated
+ 19. Source assignments for sld_signaltap:auto_signaltap_0
+ 20. Parameter Settings for User Entity Instance: sin:Rom_sin|altsyncram:altsyncram_component
+ 21. Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component
+ 23. Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component
+ 24. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "count:count_m3"
+ 27. Port Connectivity Checks: "count:count_m2"
+ 28. Port Connectivity Checks: "count:count_m1"
+ 29. Signal Tap Logic Analyzer Settings
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -71,18 +64,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 27 06:06:14 2025       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 28 19:15:08 2025       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; any_wave                                    ;
 ; Top-level Entity Name              ; any_wave                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 717                                         ;
-;     Total combinational functions  ; 492                                         ;
-;     Dedicated logic registers      ; 525                                         ;
-; Total registers                    ; 525                                         ;
+; Total logic elements               ; 791                                         ;
+;     Total combinational functions  ; 568                                         ;
+;     Dedicated logic registers      ; 546                                         ;
+; Total registers                    ; 546                                         ;
 ; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 10,240                                      ;
+; Total memory bits                  ; 16,384                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -187,7 +180,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -196,13 +190,13 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------+-------------+
 ; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                               ; Library     ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------+-------------+
+; srv/key_negedge.v                                                  ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/key_negedge.v                                                  ;             ;
 ; ip_config/sin.v                                                    ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/sin.v                                                    ;             ;
 ; ip_config/square.v                                                 ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/square.v                                                 ;             ;
 ; ip_config/triangular.v                                             ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/triangular.v                                             ;             ;
 ; ip_config/sawtooth.v                                               ; yes             ; User Wizard-Generated File                   ; D:/FPGAProject/any_wave/ip_config/sawtooth.v                                               ;             ;
 ; srv/any_wave.v                                                     ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/any_wave.v                                                     ;             ;
 ; srv/count.v                                                        ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/count.v                                                        ;             ;
-; srv/ax_debounce.v                                                  ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/ax_debounce.v                                                  ;             ;
 ; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;             ;
 ; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;             ;
 ; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;             ;
@@ -212,14 +206,14 @@ refer to the applicable agreement for further details.
 ; altrom.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                          ;             ;
 ; altram.inc                                                         ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                          ;             ;
 ; altdpram.inc                                                       ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                        ;             ;
-; db/altsyncram_dha1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf                                             ;             ;
-; ./mif/sin_wave.mif                                                 ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/sin_wave.mif                                                   ;             ;
-; db/altsyncram_kra1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf                                             ;             ;
-; ./mif/square_wave.mif                                              ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/square_wave.mif                                                ;             ;
-; db/altsyncram_s2b1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf                                             ;             ;
-; ./mif/sawtooth_wave.mif                                            ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/sawtooth_wave.mif                                              ;             ;
-; db/altsyncram_s8b1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf                                             ;             ;
-; ./mif/triangular_wave.mif                                          ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/triangular_wave.mif                                            ;             ;
+; db/altsyncram_26a1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_26a1.tdf                                             ;             ;
+; ./sin_wave.mif                                                     ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/sin_wave.mif                                                       ;             ;
+; db/altsyncram_9ga1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_9ga1.tdf                                             ;             ;
+; ./square_wave.mif                                                  ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/square_wave.mif                                                    ;             ;
+; db/altsyncram_hna1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_hna1.tdf                                             ;             ;
+; ./sawtooth_wave.mif                                                ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/sawtooth_wave.mif                                                  ;             ;
+; db/altsyncram_hta1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_hta1.tdf                                             ;             ;
+; ./triangular_wave.mif                                              ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/triangular_wave.mif                                                ;             ;
 ; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap.vhd                   ;             ;
 ; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd              ;             ;
 ; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_ela_control.vhd                 ;             ;
@@ -266,6 +260,15 @@ refer to the applicable agreement for further details.
 ; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
 ; db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
 ; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                    ;             ;
+; srv/ax_debounce.v                                                  ; yes             ; User Verilog HDL File                        ; D:/FPGAProject/any_wave/srv/ax_debounce.v                                                  ;             ;
+; db/altsyncram_dha1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf                                             ;             ;
+; mif/sin_wave.mif                                                   ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/sin_wave.mif                                                   ;             ;
+; db/altsyncram_kra1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf                                             ;             ;
+; mif/square_wave.mif                                                ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/square_wave.mif                                                ;             ;
+; db/altsyncram_s2b1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf                                             ;             ;
+; mif/sawtooth_wave.mif                                              ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/sawtooth_wave.mif                                              ;             ;
+; db/altsyncram_s8b1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf                                             ;             ;
+; mif/triangular_wave.mif                                            ; yes             ; Auto-Found Memory Initialization File        ; D:/FPGAProject/any_wave/mif/triangular_wave.mif                                            ;             ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------+-------------+
 
 
@@ -274,31 +277,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 717                      ;
+; Estimated Total logic elements              ; 791                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 492                      ;
+; Total combinational functions               ; 568                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 191                      ;
-;     -- 3 input functions                    ; 149                      ;
-;     -- <=2 input functions                  ; 152                      ;
+;     -- 4 input functions                    ; 229                      ;
+;     -- 3 input functions                    ; 178                      ;
+;     -- <=2 input functions                  ; 161                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 402                      ;
-;     -- arithmetic mode                      ; 90                       ;
+;     -- normal mode                          ; 470                      ;
+;     -- arithmetic mode                      ; 98                       ;
 ;                                             ;                          ;
-; Total registers                             ; 525                      ;
-;     -- Dedicated logic registers            ; 525                      ;
+; Total registers                             ; 546                      ;
+;     -- Dedicated logic registers            ; 546                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 13                       ;
-; Total memory bits                           ; 10240                    ;
+; Total memory bits                           ; 16384                    ;
 ;                                             ;                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 350                      ;
-; Total fan-out                               ; 3538                     ;
-; Average fan-out                             ; 3.31                     ;
+; Total fan-out                               ; 4126                     ;
+; Average fan-out                             ; 3.47                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -307,7 +310,19 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |any_wave                                                                                                                               ; 492 (8)             ; 525 (9)                   ; 10240       ; 0            ; 0       ; 0         ; 13   ; 0            ; |any_wave                                                                                                                                                                                                                                                                                                                                            ; any_wave                          ; work         ;
+; |any_wave                                                                                                                               ; 568 (66)            ; 546 (9)                   ; 16384       ; 0            ; 0       ; 0         ; 13   ; 0            ; |any_wave                                                                                                                                                                                                                                                                                                                                            ; any_wave                          ; work         ;
+;    |count:count_m1|                                                                                                                     ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|count:count_m1                                                                                                                                                                                                                                                                                                                             ; count                             ; work         ;
+;    |count:count_m2|                                                                                                                     ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|count:count_m2                                                                                                                                                                                                                                                                                                                             ; count                             ; work         ;
+;    |count:count_m3|                                                                                                                     ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|count:count_m3                                                                                                                                                                                                                                                                                                                             ; count                             ; work         ;
+;    |key_negedge:key_negedge_m1|                                                                                                         ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|key_negedge:key_negedge_m1                                                                                                                                                                                                                                                                                                                 ; key_negedge                       ; work         ;
+;    |key_negedge:key_negedge_m2|                                                                                                         ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|key_negedge:key_negedge_m2                                                                                                                                                                                                                                                                                                                 ; key_negedge                       ; work         ;
+;    |key_negedge:key_negedge_m3|                                                                                                         ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|key_negedge:key_negedge_m3                                                                                                                                                                                                                                                                                                                 ; key_negedge                       ; work         ;
+;    |sawtooth:Rom_sawtooth|                                                                                                              ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sawtooth:Rom_sawtooth                                                                                                                                                                                                                                                                                                                      ; sawtooth                          ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sawtooth:Rom_sawtooth|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                      ; altsyncram                        ; work         ;
+;          |altsyncram_hna1:auto_generated|                                                                                               ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_hna1:auto_generated                                                                                                                                                                                                                                                       ; altsyncram_hna1                   ; work         ;
+;    |sin:Rom_sin|                                                                                                                        ; 1 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin                                                                                                                                                                                                                                                                                                                                ; sin                               ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 1 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                                ; altsyncram                        ; work         ;
+;          |altsyncram_26a1:auto_generated|                                                                                               ; 1 (1)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_26a1:auto_generated                                                                                                                                                                                                                                                                 ; altsyncram_26a1                   ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 127 (1)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -358,21 +373,27 @@ refer to the applicable agreement for further details.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                               ; lpm_shiftreg                      ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                            ; lpm_shiftreg                      ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 30 (30)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                          ; sld_rom_sr                        ; work         ;
-;    |triangular:Rom_triangular|                                                                                                          ; 1 (0)               ; 1 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular                                                                                                                                                                                                                                                                                                                  ; triangular                        ; work         ;
-;       |altsyncram:altsyncram_component|                                                                                                 ; 1 (0)               ; 1 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                  ; altsyncram                        ; work         ;
-;          |altsyncram_s8b1:auto_generated|                                                                                               ; 1 (1)               ; 1 (1)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated                                                                                                                                                                                                                                                   ; altsyncram_s8b1                   ; work         ;
+;    |square:Rom_square|                                                                                                                  ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|square:Rom_square                                                                                                                                                                                                                                                                                                                          ; square                            ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|square:Rom_square|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                          ; altsyncram                        ; work         ;
+;          |altsyncram_9ga1:auto_generated|                                                                                               ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|square:Rom_square|altsyncram:altsyncram_component|altsyncram_9ga1:auto_generated                                                                                                                                                                                                                                                           ; altsyncram_9ga1                   ; work         ;
+;    |triangular:Rom_triangular|                                                                                                          ; 0 (0)               ; 1 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular                                                                                                                                                                                                                                                                                                                  ; triangular                        ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 0 (0)               ; 1 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                  ; altsyncram                        ; work         ;
+;          |altsyncram_hta1:auto_generated|                                                                                               ; 0 (0)               ; 1 (1)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |any_wave|triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated                                                                                                                                                                                                                                                   ; altsyncram_hta1                   ; work         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                               ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------+
-; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                       ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------+
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_i724:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None                      ;
-; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|ALTSYNCRAM                                                                                                   ; AUTO ; ROM              ; 256          ; 8            ; --           ; --           ; 2048 ; ./mif/triangular_wave.mif ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-----------------------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                   ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-----------------------+
+; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_hna1:auto_generated|ALTSYNCRAM                                                                                                       ; AUTO ; ROM              ; 256          ; 8            ; --           ; --           ; 2048 ; ./sawtooth_wave.mif   ;
+; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_26a1:auto_generated|ALTSYNCRAM                                                                                                                 ; AUTO ; ROM              ; 256          ; 8            ; --           ; --           ; 2048 ; ./sin_wave.mif        ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_i724:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None                  ;
+; square:Rom_square|altsyncram:altsyncram_component|altsyncram_9ga1:auto_generated|ALTSYNCRAM                                                                                                           ; AUTO ; ROM              ; 256          ; 8            ; --           ; --           ; 2048 ; ./square_wave.mif     ;
+; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated|ALTSYNCRAM                                                                                                   ; AUTO ; ROM              ; 256          ; 8            ; --           ; --           ; 2048 ; ./triangular_wave.mif ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-----------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -392,16 +413,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                     ;
-+---------------------------------------------------------------------------------------------------+--------------------+
-; Register name                                                                                     ; Reason for Removal ;
-+---------------------------------------------------------------------------------------------------+--------------------+
-; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|rden_a_store ; Lost fanout        ;
-; square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|rden_a_store     ; Lost fanout        ;
-; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|rden_a_store           ; Lost fanout        ;
-; Total Number of Removed Registers = 3                                                             ;                    ;
-+---------------------------------------------------------------------------------------------------+--------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; dout_temp1[0]                                       ; Mux10               ; yes                    ;
+; dout_temp2[0]                                       ; Mux2                ; yes                    ;
+; dout_temp1[1]                                       ; Mux10               ; yes                    ;
+; dout_temp2[1]                                       ; Mux2                ; yes                    ;
+; dout_temp1[2]                                       ; Mux10               ; yes                    ;
+; dout_temp2[2]                                       ; Mux2                ; yes                    ;
+; dout_temp1[3]                                       ; Mux10               ; yes                    ;
+; dout_temp2[3]                                       ; Mux2                ; yes                    ;
+; dout_temp1[4]                                       ; Mux10               ; yes                    ;
+; dout_temp2[4]                                       ; Mux2                ; yes                    ;
+; dout_temp1[5]                                       ; Mux10               ; yes                    ;
+; dout_temp2[5]                                       ; Mux2                ; yes                    ;
+; dout_temp1[6]                                       ; Mux10               ; yes                    ;
+; dout_temp2[6]                                       ; Mux2                ; yes                    ;
+; dout_temp1[7]                                       ; Mux10               ; yes                    ;
+; dout_temp2[7]                                       ; Mux2                ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                     ; Reason for Removal                                                                                                ;
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+; sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_26a1:auto_generated|rden_a_store           ; Merged with triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated|rden_a_store ;
+; square:Rom_square|altsyncram:altsyncram_component|altsyncram_9ga1:auto_generated|rden_a_store     ; Merged with triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated|rden_a_store ;
+; sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_hna1:auto_generated|rden_a_store ; Merged with triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated|rden_a_store ;
+; Total Number of Removed Registers = 3                                                             ;                                                                                                                   ;
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -409,12 +456,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 525   ;
+; Total registers                              ; 546   ;
 ; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 65    ;
-; Number of registers using Asynchronous Clear ; 197   ;
+; Number of registers using Asynchronous Clear ; 215   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 331   ;
+; Number of registers using Clock Enable       ; 340   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -441,8 +488,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |any_wave|Mux17            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |any_wave|Mux8             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +---------------------------------------------------------------------------------------------------+
-; Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated ;
+; Source assignments for sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_26a1:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                  ;
 +---------------------------------+--------------------+------+-------------------------------------+
@@ -451,7 +508,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +---------------------------------------------------------------------------------------------------------+
-; Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated ;
+; Source assignments for square:Rom_square|altsyncram:altsyncram_component|altsyncram_9ga1:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                        ;
 +---------------------------------+--------------------+------+-------------------------------------------+
@@ -460,7 +517,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +-------------------------------------------------------------------------------------------------------------+
-; Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated ;
+; Source assignments for sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_hna1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                            ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
@@ -469,7 +526,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated ;
+; Source assignments for triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                ;
 +---------------------------------+--------------------+------+---------------------------------------------------+
@@ -484,42 +541,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+-------+------+----------------------+
 ; MESSAGE_DISABLE ; 13410 ; -    ; -                    ;
 +-----------------+-------+------+----------------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m1 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 32    ; Signed Integer                                 ;
-; FREQ           ; 50    ; Signed Integer                                 ;
-; MAX_TIME       ; 20    ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m2 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 32    ; Signed Integer                                 ;
-; FREQ           ; 50    ; Signed Integer                                 ;
-; MAX_TIME       ; 20    ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ax_debounce:ax_debounce_m3 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; N              ; 32    ; Signed Integer                                 ;
-; FREQ           ; 50    ; Signed Integer                                 ;
-; MAX_TIME       ; 20    ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------------+
@@ -565,7 +586,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                      ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
-; INIT_FILE                          ; ./mif/sin_wave.mif   ; Untyped                      ;
+; INIT_FILE                          ; ./sin_wave.mif       ; Untyped                      ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                      ;
@@ -578,191 +599,191 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                      ;
-; CBXI_PARAMETER                     ; altsyncram_dha1      ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_26a1      ; Untyped                      ;
 +------------------------------------+----------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: square:Rom_square|altsyncram:altsyncram_component ;
-+------------------------------------+-----------------------+-----------------------------------+
-; Parameter Name                     ; Value                 ; Type                              ;
-+------------------------------------+-----------------------+-----------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                     ; Untyped                           ;
-; AUTO_CARRY_CHAINS                  ; ON                    ; AUTO_CARRY                        ;
-; IGNORE_CARRY_BUFFERS               ; OFF                   ; IGNORE_CARRY                      ;
-; AUTO_CASCADE_CHAINS                ; ON                    ; AUTO_CASCADE                      ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                   ; IGNORE_CASCADE                    ;
-; WIDTH_BYTEENA                      ; 1                     ; Untyped                           ;
-; OPERATION_MODE                     ; ROM                   ; Untyped                           ;
-; WIDTH_A                            ; 8                     ; Signed Integer                    ;
-; WIDTHAD_A                          ; 8                     ; Signed Integer                    ;
-; NUMWORDS_A                         ; 256                   ; Signed Integer                    ;
-; OUTDATA_REG_A                      ; CLOCK0                ; Untyped                           ;
-; ADDRESS_ACLR_A                     ; NONE                  ; Untyped                           ;
-; OUTDATA_ACLR_A                     ; NONE                  ; Untyped                           ;
-; WRCONTROL_ACLR_A                   ; NONE                  ; Untyped                           ;
-; INDATA_ACLR_A                      ; NONE                  ; Untyped                           ;
-; BYTEENA_ACLR_A                     ; NONE                  ; Untyped                           ;
-; WIDTH_B                            ; 1                     ; Untyped                           ;
-; WIDTHAD_B                          ; 1                     ; Untyped                           ;
-; NUMWORDS_B                         ; 1                     ; Untyped                           ;
-; INDATA_REG_B                       ; CLOCK1                ; Untyped                           ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                ; Untyped                           ;
-; RDCONTROL_REG_B                    ; CLOCK1                ; Untyped                           ;
-; ADDRESS_REG_B                      ; CLOCK1                ; Untyped                           ;
-; OUTDATA_REG_B                      ; UNREGISTERED          ; Untyped                           ;
-; BYTEENA_REG_B                      ; CLOCK1                ; Untyped                           ;
-; INDATA_ACLR_B                      ; NONE                  ; Untyped                           ;
-; WRCONTROL_ACLR_B                   ; NONE                  ; Untyped                           ;
-; ADDRESS_ACLR_B                     ; NONE                  ; Untyped                           ;
-; OUTDATA_ACLR_B                     ; NONE                  ; Untyped                           ;
-; RDCONTROL_ACLR_B                   ; NONE                  ; Untyped                           ;
-; BYTEENA_ACLR_B                     ; NONE                  ; Untyped                           ;
-; WIDTH_BYTEENA_A                    ; 1                     ; Signed Integer                    ;
-; WIDTH_BYTEENA_B                    ; 1                     ; Untyped                           ;
-; RAM_BLOCK_TYPE                     ; AUTO                  ; Untyped                           ;
-; BYTE_SIZE                          ; 8                     ; Untyped                           ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ; Untyped                           ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ  ; Untyped                           ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ  ; Untyped                           ;
-; INIT_FILE                          ; ./mif/square_wave.mif ; Untyped                           ;
-; INIT_FILE_LAYOUT                   ; PORT_A                ; Untyped                           ;
-; MAXIMUM_DEPTH                      ; 0                     ; Untyped                           ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                ; Untyped                           ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                ; Untyped                           ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                ; Untyped                           ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                ; Untyped                           ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN       ; Untyped                           ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN       ; Untyped                           ;
-; ENABLE_ECC                         ; FALSE                 ; Untyped                           ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                 ; Untyped                           ;
-; WIDTH_ECCSTATUS                    ; 3                     ; Untyped                           ;
-; DEVICE_FAMILY                      ; Cyclone IV E          ; Untyped                           ;
-; CBXI_PARAMETER                     ; altsyncram_kra1       ; Untyped                           ;
-+------------------------------------+-----------------------+-----------------------------------+
++------------------------------------+----------------------+------------------------------------+
+; Parameter Name                     ; Value                ; Type                               ;
++------------------------------------+----------------------+------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                            ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                            ;
+; WIDTH_A                            ; 8                    ; Signed Integer                     ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                     ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                     ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WIDTH_B                            ; 1                    ; Untyped                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; INIT_FILE                          ; ./square_wave.mif    ; Untyped                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_9ga1      ; Untyped                            ;
++------------------------------------+----------------------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: sawtooth:Rom_sawtooth|altsyncram:altsyncram_component ;
-+------------------------------------+-------------------------+-------------------------------------+
-; Parameter Name                     ; Value                   ; Type                                ;
-+------------------------------------+-------------------------+-------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                       ; Untyped                             ;
-; AUTO_CARRY_CHAINS                  ; ON                      ; AUTO_CARRY                          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                     ; IGNORE_CARRY                        ;
-; AUTO_CASCADE_CHAINS                ; ON                      ; AUTO_CASCADE                        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                     ; IGNORE_CASCADE                      ;
-; WIDTH_BYTEENA                      ; 1                       ; Untyped                             ;
-; OPERATION_MODE                     ; ROM                     ; Untyped                             ;
-; WIDTH_A                            ; 8                       ; Signed Integer                      ;
-; WIDTHAD_A                          ; 8                       ; Signed Integer                      ;
-; NUMWORDS_A                         ; 256                     ; Signed Integer                      ;
-; OUTDATA_REG_A                      ; CLOCK0                  ; Untyped                             ;
-; ADDRESS_ACLR_A                     ; NONE                    ; Untyped                             ;
-; OUTDATA_ACLR_A                     ; NONE                    ; Untyped                             ;
-; WRCONTROL_ACLR_A                   ; NONE                    ; Untyped                             ;
-; INDATA_ACLR_A                      ; NONE                    ; Untyped                             ;
-; BYTEENA_ACLR_A                     ; NONE                    ; Untyped                             ;
-; WIDTH_B                            ; 1                       ; Untyped                             ;
-; WIDTHAD_B                          ; 1                       ; Untyped                             ;
-; NUMWORDS_B                         ; 1                       ; Untyped                             ;
-; INDATA_REG_B                       ; CLOCK1                  ; Untyped                             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                  ; Untyped                             ;
-; RDCONTROL_REG_B                    ; CLOCK1                  ; Untyped                             ;
-; ADDRESS_REG_B                      ; CLOCK1                  ; Untyped                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED            ; Untyped                             ;
-; BYTEENA_REG_B                      ; CLOCK1                  ; Untyped                             ;
-; INDATA_ACLR_B                      ; NONE                    ; Untyped                             ;
-; WRCONTROL_ACLR_B                   ; NONE                    ; Untyped                             ;
-; ADDRESS_ACLR_B                     ; NONE                    ; Untyped                             ;
-; OUTDATA_ACLR_B                     ; NONE                    ; Untyped                             ;
-; RDCONTROL_ACLR_B                   ; NONE                    ; Untyped                             ;
-; BYTEENA_ACLR_B                     ; NONE                    ; Untyped                             ;
-; WIDTH_BYTEENA_A                    ; 1                       ; Signed Integer                      ;
-; WIDTH_BYTEENA_B                    ; 1                       ; Untyped                             ;
-; RAM_BLOCK_TYPE                     ; AUTO                    ; Untyped                             ;
-; BYTE_SIZE                          ; 8                       ; Untyped                             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE               ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ    ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ    ; Untyped                             ;
-; INIT_FILE                          ; ./mif/sawtooth_wave.mif ; Untyped                             ;
-; INIT_FILE_LAYOUT                   ; PORT_A                  ; Untyped                             ;
-; MAXIMUM_DEPTH                      ; 0                       ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                  ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                  ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                  ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                  ; Untyped                             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN         ; Untyped                             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN         ; Untyped                             ;
-; ENABLE_ECC                         ; FALSE                   ; Untyped                             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                   ; Untyped                             ;
-; WIDTH_ECCSTATUS                    ; 3                       ; Untyped                             ;
-; DEVICE_FAMILY                      ; Cyclone IV E            ; Untyped                             ;
-; CBXI_PARAMETER                     ; altsyncram_s2b1         ; Untyped                             ;
-+------------------------------------+-------------------------+-------------------------------------+
++------------------------------------+----------------------+----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                   ;
++------------------------------------+----------------------+----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                         ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                ;
+; WIDTH_A                            ; 8                    ; Signed Integer                         ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                         ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                         ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                ;
+; WIDTH_B                            ; 1                    ; Untyped                                ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
+; INIT_FILE                          ; ./sawtooth_wave.mif  ; Untyped                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_hna1      ; Untyped                                ;
++------------------------------------+----------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: triangular:Rom_triangular|altsyncram:altsyncram_component ;
-+------------------------------------+---------------------------+---------------------------------------+
-; Parameter Name                     ; Value                     ; Type                                  ;
-+------------------------------------+---------------------------+---------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                         ; Untyped                               ;
-; AUTO_CARRY_CHAINS                  ; ON                        ; AUTO_CARRY                            ;
-; IGNORE_CARRY_BUFFERS               ; OFF                       ; IGNORE_CARRY                          ;
-; AUTO_CASCADE_CHAINS                ; ON                        ; AUTO_CASCADE                          ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                       ; IGNORE_CASCADE                        ;
-; WIDTH_BYTEENA                      ; 1                         ; Untyped                               ;
-; OPERATION_MODE                     ; ROM                       ; Untyped                               ;
-; WIDTH_A                            ; 8                         ; Signed Integer                        ;
-; WIDTHAD_A                          ; 8                         ; Signed Integer                        ;
-; NUMWORDS_A                         ; 256                       ; Signed Integer                        ;
-; OUTDATA_REG_A                      ; CLOCK0                    ; Untyped                               ;
-; ADDRESS_ACLR_A                     ; NONE                      ; Untyped                               ;
-; OUTDATA_ACLR_A                     ; NONE                      ; Untyped                               ;
-; WRCONTROL_ACLR_A                   ; NONE                      ; Untyped                               ;
-; INDATA_ACLR_A                      ; NONE                      ; Untyped                               ;
-; BYTEENA_ACLR_A                     ; NONE                      ; Untyped                               ;
-; WIDTH_B                            ; 1                         ; Untyped                               ;
-; WIDTHAD_B                          ; 1                         ; Untyped                               ;
-; NUMWORDS_B                         ; 1                         ; Untyped                               ;
-; INDATA_REG_B                       ; CLOCK1                    ; Untyped                               ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                    ; Untyped                               ;
-; RDCONTROL_REG_B                    ; CLOCK1                    ; Untyped                               ;
-; ADDRESS_REG_B                      ; CLOCK1                    ; Untyped                               ;
-; OUTDATA_REG_B                      ; UNREGISTERED              ; Untyped                               ;
-; BYTEENA_REG_B                      ; CLOCK1                    ; Untyped                               ;
-; INDATA_ACLR_B                      ; NONE                      ; Untyped                               ;
-; WRCONTROL_ACLR_B                   ; NONE                      ; Untyped                               ;
-; ADDRESS_ACLR_B                     ; NONE                      ; Untyped                               ;
-; OUTDATA_ACLR_B                     ; NONE                      ; Untyped                               ;
-; RDCONTROL_ACLR_B                   ; NONE                      ; Untyped                               ;
-; BYTEENA_ACLR_B                     ; NONE                      ; Untyped                               ;
-; WIDTH_BYTEENA_A                    ; 1                         ; Signed Integer                        ;
-; WIDTH_BYTEENA_B                    ; 1                         ; Untyped                               ;
-; RAM_BLOCK_TYPE                     ; AUTO                      ; Untyped                               ;
-; BYTE_SIZE                          ; 8                         ; Untyped                               ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                 ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ      ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ      ; Untyped                               ;
-; INIT_FILE                          ; ./mif/triangular_wave.mif ; Untyped                               ;
-; INIT_FILE_LAYOUT                   ; PORT_A                    ; Untyped                               ;
-; MAXIMUM_DEPTH                      ; 0                         ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                    ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                    ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                    ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                    ; Untyped                               ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN           ; Untyped                               ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN           ; Untyped                               ;
-; ENABLE_ECC                         ; FALSE                     ; Untyped                               ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                     ; Untyped                               ;
-; WIDTH_ECCSTATUS                    ; 3                         ; Untyped                               ;
-; DEVICE_FAMILY                      ; Cyclone IV E              ; Untyped                               ;
-; CBXI_PARAMETER                     ; altsyncram_s8b1           ; Untyped                               ;
-+------------------------------------+---------------------------+---------------------------------------+
++------------------------------------+-----------------------+-------------------------------------------+
+; Parameter Name                     ; Value                 ; Type                                      ;
++------------------------------------+-----------------------+-------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                     ; Untyped                                   ;
+; AUTO_CARRY_CHAINS                  ; ON                    ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS               ; OFF                   ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS                ; ON                    ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                   ; IGNORE_CASCADE                            ;
+; WIDTH_BYTEENA                      ; 1                     ; Untyped                                   ;
+; OPERATION_MODE                     ; ROM                   ; Untyped                                   ;
+; WIDTH_A                            ; 8                     ; Signed Integer                            ;
+; WIDTHAD_A                          ; 8                     ; Signed Integer                            ;
+; NUMWORDS_A                         ; 256                   ; Signed Integer                            ;
+; OUTDATA_REG_A                      ; CLOCK0                ; Untyped                                   ;
+; ADDRESS_ACLR_A                     ; NONE                  ; Untyped                                   ;
+; OUTDATA_ACLR_A                     ; NONE                  ; Untyped                                   ;
+; WRCONTROL_ACLR_A                   ; NONE                  ; Untyped                                   ;
+; INDATA_ACLR_A                      ; NONE                  ; Untyped                                   ;
+; BYTEENA_ACLR_A                     ; NONE                  ; Untyped                                   ;
+; WIDTH_B                            ; 1                     ; Untyped                                   ;
+; WIDTHAD_B                          ; 1                     ; Untyped                                   ;
+; NUMWORDS_B                         ; 1                     ; Untyped                                   ;
+; INDATA_REG_B                       ; CLOCK1                ; Untyped                                   ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                ; Untyped                                   ;
+; RDCONTROL_REG_B                    ; CLOCK1                ; Untyped                                   ;
+; ADDRESS_REG_B                      ; CLOCK1                ; Untyped                                   ;
+; OUTDATA_REG_B                      ; UNREGISTERED          ; Untyped                                   ;
+; BYTEENA_REG_B                      ; CLOCK1                ; Untyped                                   ;
+; INDATA_ACLR_B                      ; NONE                  ; Untyped                                   ;
+; WRCONTROL_ACLR_B                   ; NONE                  ; Untyped                                   ;
+; ADDRESS_ACLR_B                     ; NONE                  ; Untyped                                   ;
+; OUTDATA_ACLR_B                     ; NONE                  ; Untyped                                   ;
+; RDCONTROL_ACLR_B                   ; NONE                  ; Untyped                                   ;
+; BYTEENA_ACLR_B                     ; NONE                  ; Untyped                                   ;
+; WIDTH_BYTEENA_A                    ; 1                     ; Signed Integer                            ;
+; WIDTH_BYTEENA_B                    ; 1                     ; Untyped                                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                  ; Untyped                                   ;
+; BYTE_SIZE                          ; 8                     ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ  ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ  ; Untyped                                   ;
+; INIT_FILE                          ; ./triangular_wave.mif ; Untyped                                   ;
+; INIT_FILE_LAYOUT                   ; PORT_A                ; Untyped                                   ;
+; MAXIMUM_DEPTH                      ; 0                     ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN       ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN       ; Untyped                                   ;
+; ENABLE_ECC                         ; FALSE                 ; Untyped                                   ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                 ; Untyped                                   ;
+; WIDTH_ECCSTATUS                    ; 3                     ; Untyped                                   ;
+; DEVICE_FAMILY                      ; Cyclone IV E          ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_hta1       ; Untyped                                   ;
++------------------------------------+-----------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -886,61 +907,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sawtooth:Rom_sawtooth"                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "square:Rom_square"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sin:Rom_sin"                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "ax_debounce:ax_debounce_m3"      ;
-+----------------+--------+----------+------------------------+
-; Port           ; Type   ; Severity ; Details                ;
-+----------------+--------+----------+------------------------+
-; button_posedge ; Output ; Info     ; Explicitly unconnected ;
-; button_out     ; Output ; Info     ; Explicitly unconnected ;
-+----------------+--------+----------+------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "count:count_m3"                                                                     ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "ax_debounce:ax_debounce_m2"      ;
-+----------------+--------+----------+------------------------+
-; Port           ; Type   ; Severity ; Details                ;
-+----------------+--------+----------+------------------------+
-; button_posedge ; Output ; Info     ; Explicitly unconnected ;
-; button_out     ; Output ; Info     ; Explicitly unconnected ;
-+----------------+--------+----------+------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -949,19 +922,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "ax_debounce:ax_debounce_m1"      ;
-+----------------+--------+----------+------------------------+
-; Port           ; Type   ; Severity ; Details                ;
-+----------------+--------+----------+------------------------+
-; button_posedge ; Output ; Info     ; Explicitly unconnected ;
-; button_out     ; Output ; Info     ; Explicitly unconnected ;
-+----------------+--------+----------+------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -970,7 +932,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; t    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -990,20 +951,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 10                          ;
-;     CLR               ; 9                           ;
+; cycloneiii_ff         ; 31                          ;
+;     CLR               ; 21                          ;
+;     ENA               ; 3                           ;
+;     ENA CLR           ; 6                           ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 9                           ;
-;     arith             ; 6                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 3                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 1                           ;
-; cycloneiii_ram_block  ; 8                           ;
+; cycloneiii_lcell_comb ; 85                          ;
+;     arith             ; 14                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 71                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 38                          ;
+; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.60                        ;
-; Average LUT depth     ; 0.95                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.03                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1016,61 +981,61 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                    ;
-+----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------------------------------------------+---------+
-; Name                 ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                                                               ; Details ;
-+----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------------------------------------------+---------+
-; clk                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clk                                                                                             ; N/A     ;
-; dout[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[0] ; N/A     ;
-; dout[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[0] ; N/A     ;
-; dout[1]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[1] ; N/A     ;
-; dout[1]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[1] ; N/A     ;
-; dout[2]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[2] ; N/A     ;
-; dout[2]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[2] ; N/A     ;
-; dout[3]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[3] ; N/A     ;
-; dout[3]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[3] ; N/A     ;
-; dout[4]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[4] ; N/A     ;
-; dout[4]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[4] ; N/A     ;
-; dout[5]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[5] ; N/A     ;
-; dout[5]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[5] ; N/A     ;
-; dout[6]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[6] ; N/A     ;
-; dout[6]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[6] ; N/A     ;
-; dout[7]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[7] ; N/A     ;
-; dout[7]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated|q_a[7] ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                                             ; N/A     ;
-+----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                        ;
++----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
+; Name                 ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                   ; Details ;
++----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
+; clk                  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clk                                 ; N/A     ;
+; dout[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~0                              ; N/A     ;
+; dout[0]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~0                              ; N/A     ;
+; dout[1]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~2                              ; N/A     ;
+; dout[1]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~2                              ; N/A     ;
+; dout[2]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~4                              ; N/A     ;
+; dout[2]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~4                              ; N/A     ;
+; dout[3]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~6                              ; N/A     ;
+; dout[3]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~6                              ; N/A     ;
+; dout[4]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~8                              ; N/A     ;
+; dout[4]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~8                              ; N/A     ;
+; dout[5]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~10                             ; N/A     ;
+; dout[5]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~10                             ; N/A     ;
+; dout[6]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~12                             ; N/A     ;
+; dout[6]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~12                             ; N/A     ;
+; dout[7]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~14                             ; N/A     ;
+; dout[7]              ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; Add0~14                             ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|gnd ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
+; auto_signaltap_0|vcc ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC ; N/A     ;
++----------------------+---------------+-----------+--------------------------------+-------------------+-------------------------------------+---------+
 
 
 +-------------------------------+
@@ -1079,10 +1044,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 27 06:05:54 2025
+    Info: Processing started: Mon Apr 28 19:14:47 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off any_wave -c any_wave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file srv/key_negedge.v
+    Info (12023): Found entity 1: key_negedge File: D:/FPGAProject/any_wave/srv/key_negedge.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ip_config/sin.v
     Info (12023): Found entity 1: sin File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file ip_config/square.v
@@ -1095,27 +1062,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file srv/any
     Info (12023): Found entity 1: any_wave File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file srv/count.v
     Info (12023): Found entity 1: count File: D:/FPGAProject/any_wave/srv/count.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file srv/ax_debounce.v
-    Info (12023): Found entity 1: ax_debounce File: D:/FPGAProject/any_wave/srv/ax_debounce.v Line: 31
 Info (12021): Found 1 design units, including 1 entities, in source file ip_config/wave.v
     Info (12023): Found entity 1: wave File: D:/FPGAProject/any_wave/ip_config/wave.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(26): created implicit net for "button1_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(47): created implicit net for "button2_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 47
-Warning (10236): Verilog HDL Implicit Net warning at any_wave.v(68): created implicit net for "button3_negedge" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 68
 Info (12127): Elaborating entity "any_wave" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at any_wave.v(120): object "dout_temp" assigned a value but never read File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 120
-Warning (10270): Verilog HDL Case Statement warning at any_wave.v(123): incomplete case statement has no default case item File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 123
-Warning (10230): Verilog HDL assignment warning at any_wave.v(136): truncated value with size 32 to match size of target (8) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 136
+Warning (10270): Verilog HDL Case Statement warning at any_wave.v(145): incomplete case statement has no default case item File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 145
+Warning (10240): Verilog HDL Always Construct warning at any_wave.v(143): inferring latch(es) for variable "dout_temp1", which holds its previous value in one or more paths through the always construct File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Warning (10270): Verilog HDL Case Statement warning at any_wave.v(156): incomplete case statement has no default case item File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 156
+Warning (10240): Verilog HDL Always Construct warning at any_wave.v(154): inferring latch(es) for variable "dout_temp2", which holds its previous value in one or more paths through the always construct File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[0]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[1]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[2]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[3]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[4]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[5]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[6]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp2[7]" at any_wave.v(154) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 154
+Info (10041): Inferred latch for "dout_temp1[0]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[1]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[2]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[3]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[4]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[5]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[6]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
+Info (10041): Inferred latch for "dout_temp1[7]" at any_wave.v(143) File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 143
 Info (12128): Elaborating entity "count" for hierarchy "count:count_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 30
-Info (12128): Elaborating entity "ax_debounce" for hierarchy "ax_debounce:ax_debounce_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 39
-Info (12128): Elaborating entity "sin" for hierarchy "sin:Rom_sin" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 88
+Info (12128): Elaborating entity "key_negedge" for hierarchy "key_negedge:key_negedge_m1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 37
+Info (12128): Elaborating entity "sin" for hierarchy "sin:Rom_sin" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 110
 Info (12128): Elaborating entity "altsyncram" for hierarchy "sin:Rom_sin|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 84
 Info (12130): Elaborated megafunction instantiation "sin:Rom_sin|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 84
 Info (12133): Instantiated megafunction "sin:Rom_sin|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/sin.v Line: 84
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./mif/sin_wave.mif"
+    Info (12134): Parameter "init_file" = "./sin_wave.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -1126,17 +1105,17 @@ Info (12133): Instantiated megafunction "sin:Rom_sin|altsyncram:altsyncram_compo
     Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dha1.tdf
-    Info (12023): Found entity 1: altsyncram_dha1 File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_dha1" for hierarchy "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "square" for hierarchy "square:Rom_square" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 96
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_26a1.tdf
+    Info (12023): Found entity 1: altsyncram_26a1 File: D:/FPGAProject/any_wave/db/altsyncram_26a1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_26a1" for hierarchy "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_26a1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "square" for hierarchy "square:Rom_square" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 118
 Info (12128): Elaborating entity "altsyncram" for hierarchy "square:Rom_square|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/square.v Line: 84
 Info (12130): Elaborated megafunction instantiation "square:Rom_square|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/square.v Line: 84
 Info (12133): Instantiated megafunction "square:Rom_square|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/square.v Line: 84
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./mif/square_wave.mif"
+    Info (12134): Parameter "init_file" = "./square_wave.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -1147,17 +1126,17 @@ Info (12133): Instantiated megafunction "square:Rom_square|altsyncram:altsyncram
     Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kra1.tdf
-    Info (12023): Found entity 1: altsyncram_kra1 File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_kra1" for hierarchy "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "sawtooth" for hierarchy "sawtooth:Rom_sawtooth" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 103
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9ga1.tdf
+    Info (12023): Found entity 1: altsyncram_9ga1 File: D:/FPGAProject/any_wave/db/altsyncram_9ga1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_9ga1" for hierarchy "square:Rom_square|altsyncram:altsyncram_component|altsyncram_9ga1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "sawtooth" for hierarchy "sawtooth:Rom_sawtooth" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 125
 Info (12128): Elaborating entity "altsyncram" for hierarchy "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sawtooth.v Line: 84
 Info (12130): Elaborated megafunction instantiation "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/sawtooth.v Line: 84
 Info (12133): Instantiated megafunction "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/sawtooth.v Line: 84
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./mif/sawtooth_wave.mif"
+    Info (12134): Parameter "init_file" = "./sawtooth_wave.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -1168,17 +1147,17 @@ Info (12133): Instantiated megafunction "sawtooth:Rom_sawtooth|altsyncram:altsyn
     Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s2b1.tdf
-    Info (12023): Found entity 1: altsyncram_s2b1 File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_s2b1" for hierarchy "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "triangular" for hierarchy "triangular:Rom_triangular" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 110
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hna1.tdf
+    Info (12023): Found entity 1: altsyncram_hna1 File: D:/FPGAProject/any_wave/db/altsyncram_hna1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_hna1" for hierarchy "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_hna1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "triangular" for hierarchy "triangular:Rom_triangular" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 132
 Info (12128): Elaborating entity "altsyncram" for hierarchy "triangular:Rom_triangular|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/triangular.v Line: 84
 Info (12130): Elaborated megafunction instantiation "triangular:Rom_triangular|altsyncram:altsyncram_component" File: D:/FPGAProject/any_wave/ip_config/triangular.v Line: 84
 Info (12133): Instantiated megafunction "triangular:Rom_triangular|altsyncram:altsyncram_component" with the following parameter: File: D:/FPGAProject/any_wave/ip_config/triangular.v Line: 84
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./mif/triangular_wave.mif"
+    Info (12134): Parameter "init_file" = "./triangular_wave.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -1189,9 +1168,9 @@ Info (12133): Instantiated megafunction "triangular:Rom_triangular|altsyncram:al
     Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_s8b1.tdf
-    Info (12023): Found entity 1: altsyncram_s8b1 File: D:/FPGAProject/any_wave/db/altsyncram_s8b1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_s8b1" for hierarchy "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_s8b1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hta1.tdf
+    Info (12023): Found entity 1: altsyncram_hta1 File: D:/FPGAProject/any_wave/db/altsyncram_hta1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_hta1" for hierarchy "triangular:Rom_triangular|altsyncram:altsyncram_component|altsyncram_hta1:auto_generated" File: d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i724.tdf
     Info (12023): Found entity 1: altsyncram_i724 File: D:/FPGAProject/any_wave/db/altsyncram_i724.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_psc.tdf
@@ -1212,7 +1191,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: D:/FPGAProject/any_wave/db/cmpr_ngc.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.04.27.06:06:04 Progress: Loading sld9fdc316e/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.04.28.19:14:58 Progress: Loading sld9fdc316e/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1235,50 +1214,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/FPGAProject/any_wave/db/ip/sld9fdc316e/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 36
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 58
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 80
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[3]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 102
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[4]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 124
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 146
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 168
-        Warning (14320): Synthesized away node "sawtooth:Rom_sawtooth|altsyncram:altsyncram_component|altsyncram_s2b1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_s2b1.tdf Line: 190
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 36
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 58
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 80
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[3]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 102
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[4]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 124
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 146
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 168
-        Warning (14320): Synthesized away node "square:Rom_square|altsyncram:altsyncram_component|altsyncram_kra1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_kra1.tdf Line: 190
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[0]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 36
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[1]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 58
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[2]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 80
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[3]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 102
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[4]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 124
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[5]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 146
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[6]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 168
-        Warning (14320): Synthesized away node "sin:Rom_sin|altsyncram:altsyncram_component|altsyncram_dha1:auto_generated|q_a[7]" File: D:/FPGAProject/any_wave/db/altsyncram_dha1.tdf Line: 190
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 49 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key1" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 6
-    Warning (15610): No output dependent on input pin "key2" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 7
-    Warning (15610): No output dependent on input pin "key3" File: D:/FPGAProject/any_wave/srv/any_wave.v Line: 8
-Info (21057): Implemented 766 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 872 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 732 logic cells
-    Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 4905 megabytes
-    Info: Processing ended: Sun Apr 27 06:06:14 2025
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:33
+    Info (21061): Implemented 814 logic cells
+    Info (21064): Implemented 40 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4934 megabytes
+    Info: Processing ended: Mon Apr 28 19:15:08 2025
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:36
 
 

@@ -6,6 +6,7 @@ entity any_wave is
         key1            : in     vl_logic;
         key2            : in     vl_logic;
         key3            : in     vl_logic;
+        rst_n           : in     vl_logic;
         dout            : out    vl_logic_vector(7 downto 0)
     );
 end any_wave;

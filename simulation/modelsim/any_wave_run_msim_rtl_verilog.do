@@ -33,6 +33,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/srv {D:/FPGAProject/any_wave/srv/key_negedge.v}
 vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/ip_config {D:/FPGAProject/any_wave/ip_config/sin.v}
 vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/ip_config {D:/FPGAProject/any_wave/ip_config/square.v}
 vlog -vlog01compat -work work +incdir+D:/FPGAProject/any_wave/ip_config {D:/FPGAProject/any_wave/ip_config/triangular.v}
