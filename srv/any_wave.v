@@ -150,18 +150,18 @@ begin
 	endcase
 end
 
-reg [7:0] dout_temp2;
-always @(negedge rst_n or posedge clk)
-begin
-	case(count_key2)
-		4'd0:dout_temp2 <= sin_wave;
-		4'd1:dout_temp2 <= square_wave;
-		4'd2:dout_temp2 <= sawtooth_wave;
-		4'd3:dout_temp2 <= triangular_wave;
-	endcase
-end
+// reg [7:0] dout_temp2;
+// always @(negedge rst_n or posedge clk)
+// begin
+// 	case(count_key2)
+// 		4'd0:dout_temp2 <= sin_wave;
+// 		4'd1:dout_temp2 <= square_wave;
+// 		4'd2:dout_temp2 <= sawtooth_wave;
+// 		4'd3:dout_temp2 <= triangular_wave;
+// 	endcase
+// end
 
-assign dout = dout_temp1 + dout_temp2;
+assign dout = dout_temp1 >> count_key2;
 
 always @(negedge rst_n or posedge clk)
 begin
