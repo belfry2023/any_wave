@@ -36,7 +36,7 @@ reg key2;
 reg key3;
 reg rst_n;
 // wires                                               
-wire [7:0]  dout;
+wire [8:0]  dout;
 
 // assign statements (if any)                          
 any_wave i1 (
