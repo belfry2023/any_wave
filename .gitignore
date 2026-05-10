@@ -1,0 +1,47 @@
+# Intel Quartus generated databases and outputs
+/db/
+/incremental_db/
+/greybox_tmp/
+/output_files/
+**/greybox_tmp/
+
+# Refactored Quartus project can be regenerated from Tcl
+/refactored/quartus/*.qpf
+/refactored/quartus/*.qsf
+/refactored/quartus/*.qws
+/refactored/quartus/*.mif
+/refactored/quartus/*.rpt
+/refactored/quartus/*.summary
+/refactored/quartus/*.smsg
+/refactored/quartus/db/
+/refactored/quartus/incremental_db/
+/refactored/quartus/output_files/
+
+# ModelSim generated work libraries and wave/log files
+/modelsim.ini
+/transcript
+/vsim.wlf
+**/modelsim.ini
+**/transcript
+**/msim_transcript
+**/vsim.wlf
+**/rtl_work/
+**/verilog_libs/
+**/work/
+**/work_libs/
+
+# Generated simulation and timing artifacts
+*.vo
+*.sdo
+*.xrf
+*.ver
+*.wlf
+/wlf*
+
+# Intel FPGA installer archives and extracted installers
+/Quartus-lite-*-windows/
+/Quartus-lite-*-windows.tar
+/ModelSimSetup-*-windows.exe
+
+# Local screenshots captured during verification
+/simulation/modelsim/final_simulation_screen.png
